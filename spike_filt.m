@@ -3,8 +3,8 @@
 clear;
 close all;
 
-common = '/home/bels/Documents/matlab/Spectra_filter/';
-mk = '/home/bels/Documents/matlab/Aurorae_INAF/metakernel/recon.96.mk';
+%common = '/home/bels/Documents/matlab/Spectra_filter/';
+%mk = '/home/bels/Documents/matlab/Aurorae_INAF/metakernel/recon.96.mk';	This must be replaced
 
 L = jiramlist('JRM_CMD_221_221_V04.jrm','JM0221','',false,'SPE');
 nLSCI = find(strcmp(L.mode_id,'SCI_I3_S1'));
