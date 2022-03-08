@@ -143,9 +143,9 @@ end
 disp('PARTE SERVER')
 %
 
-system('mkdir /home/bels/ftp'); %CAMBIARE (mount point)
-system('curlftpfs junoadm:Jun0Adm.14@ftp.sic.rm.cnr.it /home/bels/ftp'); %comando per montare ftp
-a=dir(['/home/bels/ftp/JIRAM_ARCHIVE/' myseqid '/PROCESSED_DATA/PDS_EDR' tmpx '/*_JUNO_*']); %cambiare mount point
+system('mkdir /Users/Utente/Desktop/noise/ftp'); %CAMBIARE (mount point)
+system('mount_ftp junoadm:Jun0Adm.14@ftp.sic.rm.cnr.it /Users/Utente/Desktop/noise'); %comando per montare ftp
+a=dir(['/Users/Utente/Desktop/noise/ftp/JIRAM_ARCHIVE/' myseqid '/PROCESSED_DATA/PDS_EDR' tmpx '/*_JUNO_*']); %cambiare mount point
 
 disp(['TROVATI ' num2str(numel(a)) ' FILE SUL SERVER'])
 
@@ -193,7 +193,7 @@ for i=1:numel(a)
     end
     ii=ii+1;
     
-    file= ['/home/bels/ftp/JIRAM_ARCHIVE/' myseqid '/PROCESSED_DATA/PDS_EDR'  tmpx '/' a(i).name '/' typ '_EDR_INDEX/JIRAM_STATUS_' typ '.txt']  ; %CAMBIARE mount point
+    file= ['/Users/Utente/Desktop/noise/ftp/JIRAM_ARCHIVE/' myseqid '/PROCESSED_DATA/PDS_EDR'  tmpx '/' a(i).name '/' typ '_EDR_INDEX/JIRAM_STATUS_' typ '.txt']  ; %CAMBIARE mount point
     while(1)
         try
             
@@ -201,9 +201,9 @@ for i=1:numel(a)
             break
         catch
             disp('riprovo')
-            system('sudo umount /home/bels/ftp');
-            system('mkdir /home/bels/ftp');
-            system('curlftpfs junoadm:Jun0Adm.14@ftp.sic.rm.cnr.it /home/bels/ftp');
+            system('sudo umount /Users/Utente/Desktop/noise/ftp');
+            system('mkdir /Users/Utente/Desktop/noise/ftp');
+            system('mount_ftp junoadm:Jun0Adm.14@ftp.sic.rm.cnr.it /Users/Utente/Desktop/noise/ftp');
             
         end
     end
@@ -283,7 +283,7 @@ save(backupfile,'OUT')
 if nargout==1
     varargout{1}=OUT;
 end
-system('umount /home/bels/ftp') 	%cambiare anche questo?
+system('umount /Users/Utente/Desktop/noise/ftp') 	%cambiare anche questo?
 
 
 
