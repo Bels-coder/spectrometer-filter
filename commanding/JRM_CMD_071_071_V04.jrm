@@ -1,0 +1,1966 @@
+# Power Off_On Intermediate Inserted on = 07-Jun-2017 12:45:17
+# Imager Delays Set To Zero, inserted on = 07-Jun-2017 12:42:57
+# Timing Recalculated on = 07-Jun-2017 12:42:03
+# 07-Jun-2017 12:39:14. Generated Commanding File from JIRAM_PLAN_ORBIT7MWR _PJ-17h_PJ+15h_(merged).jir
+# 07-Jun-2017 12:42:37. Included Radiation Sequences from AP07_jm0071_M_Radiation_Sequence_requests_P1_v04.rad
+
+SeqId        = 001
+SeqName      = JRM_Heater_Op
+SeqNote      = NaN
+SeqStartTime = 2017-07-10T02:35:04.000
+SeqEndTime   = 2017-07-10T05:45:05.000
+SeqDuration  = 03:10:01
+               00:00:00 THRM_SET_PT_SEL("JIRAM_OH","OPERATIONAL")
+               00:00:01 THRM_SET_PT_SEL("JIRAM_DECON","OPERATIONAL")
+               03:10:00 THRM_SET_PT_SEL("JIRAM_ELECT_BP","OPERATIONAL")
+
+
+Technical_Gap = 00-02:10:59
+
+
+SeqId        = 002
+SeqName      = JRM-POWER_ON
+SeqNote      = NaN
+SeqStartTime = 2017-07-10T07:56:04.000
+SeqEndTime   = 2017-07-10T07:56:04.000
+SeqDuration  = 00:00:00
+               00:00:00 JIRAM_POWER_ON
+
+
+Technical_Gap = 00-00:02:43
+
+
+SeqId        = 003
+SeqName      = JRM_StandBy
+SeqNote      = NaN
+SeqStartTime = 2017-07-10T07:58:47.000
+SeqEndTime   = 2017-07-10T07:58:55.000
+SeqDuration  = 00:00:08
+               00:00:00 JRM_SET_PAR(111,10)
+               00:00:04 JRM_STANDBY("ON","ON","ON")
+               00:00:04 JRM_SCI_PAR("SCI_I2_S3",120,1,10,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,3.000000000deg,0.400ms,30.000ms,"LOW","LOW","POINT",-180.000000000deg,0.400ms,30.000ms,"LOW","LOW","SPIN",0.000000000deg,"NO_SUMMED_SCI")
+
+
+Technical_Gap = 00-00:00:04
+
+
+SeqId        = 004
+SeqName      = JRM_Calibration
+SeqNote      = NaN
+SeqStartTime = 2017-07-10T07:58:59.000
+SeqEndTime   = 2017-07-10T08:03:15.000
+SeqDuration  = 00:04:16
+               00:00:00 JRM_CAL_PAR(8,14,8,14,30,700,30,700,30,700,30,700,30,700,200,200,153,153)
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_CALIBRATION("CAL_I1_S1","IDIS_SDIS","DISABLE",1,"LAMP_1")
+               00:04:00 JRM_STOP_HS_REC
+               00:00:04 JRM_ERROR_LOG
+
+
+Technical_Gap = 00-00:05:00
+
+
+SeqId        = 005
+SeqName      = JRM_Science
+SeqNote      = Radiation_Sequence_07_001_Approach_2017-191T08:08:15.000
+SeqStartTime = 2017-07-10T08:08:15.000
+SeqEndTime   = 2017-07-10T08:12:25.000
+SeqDuration  = 00:04:10
+               00:00:00 JRM_SET_PAR(92,153)
+               00:00:04 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",91deg,1000ms,1000ms,"LOW","LOW","POINT",-179deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:04 JRM_START_HS_REC
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",91deg,1000ms,1000ms,"LOW","LOW","POINT",-179deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",91deg,1000ms,1000ms,"LOW","LOW","POINT",-179deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_STOP_HS_REC
+               00:00:04 JRM_SET_PAR(92,8174)
+               00:00:04 JRM_ERROR_LOG
+
+
+Technical_Gap = 00-00:16:54
+
+
+SeqId        = 006
+SeqName      = JRM_Science
+SeqNote      = Atm. Map
+SeqStartTime = 2017-07-10T08:29:19.000
+SeqEndTime   = 2017-07-10T08:40:14.000
+SeqDuration  = 00:10:55
+               00:00:00 JRM_SET_PAR(74,2475)
+               00:00:04 JRM_SCI_PAR("SCI_I2_S1",20,1,20,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.222865521deg,10.000ms,1000.000ms,"LOW","LOW","POINT",-180.000000000deg,10.000ms,1000.000ms,"LOW","LOW","SPIN",-1.089234955deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:10:39 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:04
+
+
+SeqId        = 007
+SeqName      = Technical_Block
+SeqNote      = Imager Delay Set to Zero
+SeqStartTime = 2017-07-10T08:40:18.000
+SeqEndTime   = 2017-07-10T08:40:18.000
+SeqDuration  = 00:00:00
+               00:00:00 JRM_SET_PAR(74,0)
+
+
+Technical_Gap = 00-00:12:57
+
+
+SeqId        = 008
+SeqName      = JRM_Science
+SeqNote      = Radiation_Sequence_07_002_Approach_2017-191T08:53:15.000
+SeqStartTime = 2017-07-10T08:53:15.000
+SeqEndTime   = 2017-07-10T08:57:25.000
+SeqDuration  = 00:04:10
+               00:00:00 JRM_SET_PAR(92,153)
+               00:00:04 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",91deg,1000ms,1000ms,"LOW","LOW","POINT",-179deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:04 JRM_START_HS_REC
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",91deg,1000ms,1000ms,"LOW","LOW","POINT",-179deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",91deg,1000ms,1000ms,"LOW","LOW","POINT",-179deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_STOP_HS_REC
+               00:00:04 JRM_SET_PAR(92,8174)
+               00:00:04 JRM_ERROR_LOG
+
+
+Technical_Gap = 00-00:06:54
+
+
+SeqId        = 009
+SeqName      = JRM_Science
+SeqNote      = Atm. Map
+SeqStartTime = 2017-07-10T09:04:19.000
+SeqEndTime   = 2017-07-10T09:15:14.000
+SeqDuration  = 00:10:55
+               00:00:00 JRM_SET_PAR(74,2475)
+               00:00:04 JRM_SCI_PAR("SCI_I2_S1",20,1,20,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.018833706deg,10.000ms,1000.000ms,"LOW","LOW","POINT",-180.000000000deg,10.000ms,1000.000ms,"LOW","LOW","SPIN",-0.838114504deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:10:39 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:24:05
+
+
+SeqId        = 010
+SeqName      = JRM_Science
+SeqNote      = Atm. Map
+SeqStartTime = 2017-07-10T09:39:19.000
+SeqEndTime   = 2017-07-10T09:50:14.000
+SeqDuration  = 00:10:55
+               00:00:00 JRM_SET_PAR(74,2475)
+               00:00:04 JRM_SCI_PAR("SCI_I2_S1",20,1,20,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.238560276deg,10.000ms,1000.000ms,"LOW","LOW","POINT",-180.000000000deg,10.000ms,1000.000ms,"LOW","LOW","SPIN",-1.199100152deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:10:39 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:24:05
+
+
+SeqId        = 011
+SeqName      = JRM_Science
+SeqNote      = Atm. Map
+SeqStartTime = 2017-07-10T10:14:19.000
+SeqEndTime   = 2017-07-10T10:25:14.000
+SeqDuration  = 00:10:55
+               00:00:00 JRM_SET_PAR(74,2475)
+               00:00:04 JRM_SCI_PAR("SCI_I2_S1",20,1,20,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.021972657deg,10.000ms,1000.000ms,"LOW","LOW","POINT",-180.000000000deg,10.000ms,1000.000ms,"LOW","LOW","SPIN",-0.941701690deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:10:39 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:04
+
+
+SeqId        = 012
+SeqName      = Technical_Block
+SeqNote      = Imager Delay Set to Zero
+SeqStartTime = 2017-07-10T10:25:18.000
+SeqEndTime   = 2017-07-10T10:25:18.000
+SeqDuration  = 00:00:00
+               00:00:00 JRM_SET_PAR(74,0)
+
+
+Technical_Gap = 00-00:02:57
+
+
+SeqId        = 013
+SeqName      = JRM_Science
+SeqNote      = Radiation_Sequence_07_003_Approach_2017-191T10:28:15.000
+SeqStartTime = 2017-07-10T10:28:15.000
+SeqEndTime   = 2017-07-10T10:32:25.000
+SeqDuration  = 00:04:10
+               00:00:00 JRM_SET_PAR(92,153)
+               00:00:04 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",91deg,1000ms,1000ms,"LOW","LOW","POINT",-179deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:04 JRM_START_HS_REC
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",91deg,1000ms,1000ms,"LOW","LOW","POINT",-179deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",91deg,1000ms,1000ms,"LOW","LOW","POINT",-179deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_STOP_HS_REC
+               00:00:04 JRM_SET_PAR(92,8174)
+               00:00:04 JRM_ERROR_LOG
+
+
+Technical_Gap = 00-00:16:54
+
+
+SeqId        = 014
+SeqName      = JRM_Science
+SeqNote      = Atm. Map
+SeqStartTime = 2017-07-10T10:49:19.000
+SeqEndTime   = 2017-07-10T11:00:14.000
+SeqDuration  = 00:10:55
+               00:00:00 JRM_SET_PAR(74,2475)
+               00:00:04 JRM_SCI_PAR("SCI_I2_S1",20,1,20,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.251116080deg,10.000ms,1000.000ms,"LOW","LOW","POINT",-180.000000000deg,10.000ms,1000.000ms,"LOW","LOW","SPIN",-1.324660377deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:10:39 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:24:05
+
+
+SeqId        = 015
+SeqName      = JRM_Science
+SeqNote      = Atm. Map
+SeqStartTime = 2017-07-10T11:24:19.000
+SeqEndTime   = 2017-07-10T11:35:14.000
+SeqDuration  = 00:10:55
+               00:00:00 JRM_SET_PAR(74,2475)
+               00:00:04 JRM_SCI_PAR("SCI_I2_S1",20,1,20,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.021972657deg,10.000ms,1000.000ms,"LOW","LOW","POINT",-180.000000000deg,10.000ms,1000.000ms,"LOW","LOW","SPIN",-1.057844898deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:10:39 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:04
+
+
+SeqId        = 016
+SeqName      = Technical_Block
+SeqNote      = Imager Delay Set to Zero
+SeqStartTime = 2017-07-10T11:35:18.000
+SeqEndTime   = 2017-07-10T11:35:18.000
+SeqDuration  = 00:00:00
+               00:00:00 JRM_SET_PAR(74,0)
+
+
+Technical_Gap = 00-00:02:57
+
+
+SeqId        = 017
+SeqName      = JRM_Science
+SeqNote      = Radiation_Sequence_07_004_Approach_2017-191T11:38:15.000
+SeqStartTime = 2017-07-10T11:38:15.000
+SeqEndTime   = 2017-07-10T11:42:25.000
+SeqDuration  = 00:04:10
+               00:00:00 JRM_SET_PAR(92,153)
+               00:00:04 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",91deg,1000ms,1000ms,"LOW","LOW","POINT",-179deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:04 JRM_START_HS_REC
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",91deg,1000ms,1000ms,"LOW","LOW","POINT",-179deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",91deg,1000ms,1000ms,"LOW","LOW","POINT",-179deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_STOP_HS_REC
+               00:00:04 JRM_SET_PAR(92,8174)
+               00:00:04 JRM_ERROR_LOG
+
+
+Technical_Gap = 00-00:16:54
+
+
+SeqId        = 018
+SeqName      = JRM_Science
+SeqNote      = Atm. Map
+SeqStartTime = 2017-07-10T11:59:19.000
+SeqEndTime   = 2017-07-10T12:10:14.000
+SeqDuration  = 00:10:55
+               00:00:00 JRM_SET_PAR(74,2475)
+               00:00:04 JRM_SCI_PAR("SCI_I2_S1",20,1,20,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.266810835deg,10.000ms,1000.000ms,"LOW","LOW","POINT",-180.000000000deg,10.000ms,1000.000ms,"LOW","LOW","SPIN",-1.443942591deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:10:39 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:24:05
+
+
+SeqId        = 019
+SeqName      = JRM_Science
+SeqNote      = Atm. Map
+SeqStartTime = 2017-07-10T12:34:19.000
+SeqEndTime   = 2017-07-10T12:45:14.000
+SeqDuration  = 00:10:55
+               00:00:00 JRM_SET_PAR(74,2475)
+               00:00:04 JRM_SCI_PAR("SCI_I2_S1",20,1,20,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.021972657deg,10.000ms,1000.000ms,"LOW","LOW","POINT",-180.000000000deg,10.000ms,1000.000ms,"LOW","LOW","SPIN",-1.177127112deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:10:39 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:04
+
+
+SeqId        = 020
+SeqName      = Technical_Block
+SeqNote      = Imager Delay Set to Zero
+SeqStartTime = 2017-07-10T12:45:18.000
+SeqEndTime   = 2017-07-10T12:45:18.000
+SeqDuration  = 00:00:00
+               00:00:00 JRM_SET_PAR(74,0)
+
+
+Technical_Gap = 00-00:02:57
+
+
+SeqId        = 021
+SeqName      = JRM_Science
+SeqNote      = Radiation_Sequence_07_005_Approach_2017-191T12:48:15.000
+SeqStartTime = 2017-07-10T12:48:15.000
+SeqEndTime   = 2017-07-10T12:52:25.000
+SeqDuration  = 00:04:10
+               00:00:00 JRM_SET_PAR(92,153)
+               00:00:04 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",91deg,1000ms,1000ms,"LOW","LOW","POINT",-179deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:04 JRM_START_HS_REC
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",91deg,1000ms,1000ms,"LOW","LOW","POINT",-179deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",91deg,1000ms,1000ms,"LOW","LOW","POINT",-179deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_STOP_HS_REC
+               00:00:04 JRM_SET_PAR(92,8174)
+               00:00:04 JRM_ERROR_LOG
+
+
+Technical_Gap = 00-00:16:54
+
+
+SeqId        = 022
+SeqName      = JRM_Science
+SeqNote      = Atm. Map
+SeqStartTime = 2017-07-10T13:09:19.000
+SeqEndTime   = 2017-07-10T13:20:14.000
+SeqDuration  = 00:10:55
+               00:00:00 JRM_SET_PAR(74,2475)
+               00:00:04 JRM_SCI_PAR("SCI_I2_S1",20,1,20,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.288783492deg,10.000ms,1000.000ms,"LOW","LOW","POINT",-180.000000000deg,10.000ms,1000.000ms,"LOW","LOW","SPIN",-1.626004918deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:10:39 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:04
+
+
+SeqId        = 023
+SeqName      = Technical_Block
+SeqNote      = Imager Delay Set to Zero
+SeqStartTime = 2017-07-10T13:20:18.000
+SeqEndTime   = 2017-07-10T13:20:18.000
+SeqDuration  = 00:00:00
+               00:00:00 JRM_SET_PAR(74,0)
+
+
+Technical_Gap = 00-00:02:57
+
+
+SeqId        = 024
+SeqName      = JRM_Science
+SeqNote      = Radiation_Sequence_07_006_GoodPxMap_2017-191T13:23:15.000
+SeqStartTime = 2017-07-10T13:23:15.000
+SeqEndTime   = 2017-07-10T13:27:25.000
+SeqDuration  = 00:04:10
+               00:00:00 JRM_SET_PAR(92,153)
+               00:00:04 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",165deg,1000ms,1000ms,"LOW","LOW","POINT",-105deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:04 JRM_START_HS_REC
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",165deg,1000ms,1000ms,"LOW","LOW","POINT",-105deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",165deg,1000ms,1000ms,"LOW","LOW","POINT",-105deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_STOP_HS_REC
+               00:00:04 JRM_SET_PAR(92,8174)
+               00:00:04 JRM_ERROR_LOG
+
+
+Technical_Gap = 00-00:00:50
+
+
+SeqId        = 025
+SeqName      = JRM_Science
+SeqNote      = Radiation_Sequence_07_007_GoodPxMap_2017-191T13:28:15.000
+SeqStartTime = 2017-07-10T13:28:15.000
+SeqEndTime   = 2017-07-10T13:32:25.000
+SeqDuration  = 00:04:10
+               00:00:00 JRM_SET_PAR(92,153)
+               00:00:04 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",165deg,1000ms,1000ms,"LOW","LOW","POINT",-105deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:04 JRM_START_HS_REC
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",165deg,1000ms,1000ms,"LOW","LOW","POINT",-105deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",165deg,1000ms,1000ms,"LOW","LOW","POINT",-105deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_STOP_HS_REC
+               00:00:04 JRM_SET_PAR(92,8174)
+               00:00:04 JRM_ERROR_LOG
+
+
+Technical_Gap = 00-00:00:50
+
+
+SeqId        = 026
+SeqName      = JRM_Science
+SeqNote      = Radiation_Sequence_07_008_GoodPxMap_2017-191T13:33:15.000
+SeqStartTime = 2017-07-10T13:33:15.000
+SeqEndTime   = 2017-07-10T13:37:25.000
+SeqDuration  = 00:04:10
+               00:00:00 JRM_SET_PAR(92,153)
+               00:00:04 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",165deg,1000ms,1000ms,"LOW","LOW","POINT",-105deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:04 JRM_START_HS_REC
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",165deg,1000ms,1000ms,"LOW","LOW","POINT",-105deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",165deg,1000ms,1000ms,"LOW","LOW","POINT",-105deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_STOP_HS_REC
+               00:00:04 JRM_SET_PAR(92,8174)
+               00:00:04 JRM_ERROR_LOG
+
+
+Technical_Gap = 00-00:00:50
+
+
+SeqId        = 027
+SeqName      = JRM_Science
+SeqNote      = Radiation_Sequence_07_009_GoodPxMap_2017-191T13:38:15.000
+SeqStartTime = 2017-07-10T13:38:15.000
+SeqEndTime   = 2017-07-10T13:42:25.000
+SeqDuration  = 00:04:10
+               00:00:00 JRM_SET_PAR(92,153)
+               00:00:04 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",165deg,1000ms,1000ms,"LOW","LOW","POINT",-105deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:04 JRM_START_HS_REC
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",165deg,1000ms,1000ms,"LOW","LOW","POINT",-105deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",165deg,1000ms,1000ms,"LOW","LOW","POINT",-105deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_STOP_HS_REC
+               00:00:04 JRM_SET_PAR(92,8174)
+               00:00:04 JRM_ERROR_LOG
+
+
+Technical_Gap = 00-00:01:54
+
+
+SeqId        = 028
+SeqName      = JRM_Science
+SeqNote      = Atm. Map
+SeqStartTime = 2017-07-10T13:44:19.000
+SeqEndTime   = 2017-07-10T13:55:14.000
+SeqDuration  = 00:10:55
+               00:00:00 JRM_SET_PAR(74,2475)
+               00:00:04 JRM_SCI_PAR("SCI_I2_S1",20,1,20,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.025111608deg,10.000ms,1000.000ms,"LOW","LOW","POINT",-180.000000000deg,10.000ms,1000.000ms,"LOW","LOW","SPIN",-1.356050433deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:10:39 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:04
+
+
+SeqId        = 029
+SeqName      = Technical_Block
+SeqNote      = Imager Delay Set to Zero
+SeqStartTime = 2017-07-10T13:55:18.000
+SeqEndTime   = 2017-07-10T13:55:18.000
+SeqDuration  = 00:00:00
+               00:00:00 JRM_SET_PAR(74,0)
+
+
+Technical_Gap = 00-00:02:57
+
+
+SeqId        = 030
+SeqName      = JRM_Science
+SeqNote      = Radiation_Sequence_07_010_GoodPxMap_2017-191T13:58:15.000
+SeqStartTime = 2017-07-10T13:58:15.000
+SeqEndTime   = 2017-07-10T14:02:25.000
+SeqDuration  = 00:04:10
+               00:00:00 JRM_SET_PAR(92,153)
+               00:00:04 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",165deg,1000ms,1000ms,"LOW","LOW","POINT",-105deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:04 JRM_START_HS_REC
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",165deg,1000ms,1000ms,"LOW","LOW","POINT",-105deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",165deg,1000ms,1000ms,"LOW","LOW","POINT",-105deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_STOP_HS_REC
+               00:00:04 JRM_SET_PAR(92,8174)
+               00:00:04 JRM_ERROR_LOG
+
+
+Technical_Gap = 00-00:00:50
+
+
+SeqId        = 031
+SeqName      = JRM_Science
+SeqNote      = Radiation_Sequence_07_011_GoodPxMap_2017-191T14:03:15.000
+SeqStartTime = 2017-07-10T14:03:15.000
+SeqEndTime   = 2017-07-10T14:07:25.000
+SeqDuration  = 00:04:10
+               00:00:00 JRM_SET_PAR(92,153)
+               00:00:04 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",165deg,1000ms,1000ms,"LOW","LOW","POINT",-105deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:04 JRM_START_HS_REC
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",165deg,1000ms,1000ms,"LOW","LOW","POINT",-105deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",165deg,1000ms,1000ms,"LOW","LOW","POINT",-105deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_STOP_HS_REC
+               00:00:04 JRM_SET_PAR(92,8174)
+               00:00:04 JRM_ERROR_LOG
+
+
+Technical_Gap = 00-00:00:50
+
+
+SeqId        = 032
+SeqName      = JRM_Science
+SeqNote      = Radiation_Sequence_07_012_GoodPxMap_2017-191T14:08:15.000
+SeqStartTime = 2017-07-10T14:08:15.000
+SeqEndTime   = 2017-07-10T14:12:25.000
+SeqDuration  = 00:04:10
+               00:00:00 JRM_SET_PAR(92,153)
+               00:00:04 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",165deg,1000ms,1000ms,"LOW","LOW","POINT",-105deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:04 JRM_START_HS_REC
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",165deg,1000ms,1000ms,"LOW","LOW","POINT",-105deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",165deg,1000ms,1000ms,"LOW","LOW","POINT",-105deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_STOP_HS_REC
+               00:00:04 JRM_SET_PAR(92,8174)
+               00:00:04 JRM_ERROR_LOG
+
+
+Technical_Gap = 00-00:06:54
+
+
+SeqId        = 033
+SeqName      = JRM_Science
+SeqNote      = Atm. Map
+SeqStartTime = 2017-07-10T14:19:19.000
+SeqEndTime   = 2017-07-10T14:30:14.000
+SeqDuration  = 00:10:55
+               00:00:00 JRM_SET_PAR(74,2475)
+               00:00:04 JRM_SCI_PAR("SCI_I2_S1",20,1,20,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.313895100deg,10.000ms,1000.000ms,"LOW","LOW","POINT",-180.000000000deg,10.000ms,1000.000ms,"LOW","LOW","SPIN",-1.845735312deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:10:39 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:04
+
+
+SeqId        = 034
+SeqName      = Technical_Block
+SeqNote      = Imager Delay Set to Zero
+SeqStartTime = 2017-07-10T14:30:18.000
+SeqEndTime   = 2017-07-10T14:30:18.000
+SeqDuration  = 00:00:00
+               00:00:00 JRM_SET_PAR(74,0)
+
+
+Technical_Gap = 00-00:02:57
+
+
+SeqId        = 035
+SeqName      = JRM_Science
+SeqNote      = Radiation_Sequence_07_013_GoodPxMap_2017-191T14:33:15.000
+SeqStartTime = 2017-07-10T14:33:15.000
+SeqEndTime   = 2017-07-10T14:37:25.000
+SeqDuration  = 00:04:10
+               00:00:00 JRM_SET_PAR(92,153)
+               00:00:04 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",166deg,1000ms,1000ms,"LOW","LOW","POINT",-104deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:04 JRM_START_HS_REC
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",166deg,1000ms,1000ms,"LOW","LOW","POINT",-104deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",166deg,1000ms,1000ms,"LOW","LOW","POINT",-104deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_STOP_HS_REC
+               00:00:04 JRM_SET_PAR(92,8174)
+               00:00:04 JRM_ERROR_LOG
+
+
+Technical_Gap = 00-00:00:50
+
+
+SeqId        = 036
+SeqName      = JRM_Science
+SeqNote      = Radiation_Sequence_07_014_GoodPxMap_2017-191T14:38:15.000
+SeqStartTime = 2017-07-10T14:38:15.000
+SeqEndTime   = 2017-07-10T14:42:25.000
+SeqDuration  = 00:04:10
+               00:00:00 JRM_SET_PAR(92,153)
+               00:00:04 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",166deg,1000ms,1000ms,"LOW","LOW","POINT",-104deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:04 JRM_START_HS_REC
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",166deg,1000ms,1000ms,"LOW","LOW","POINT",-104deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",166deg,1000ms,1000ms,"LOW","LOW","POINT",-104deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_STOP_HS_REC
+               00:00:04 JRM_SET_PAR(92,8174)
+               00:00:04 JRM_ERROR_LOG
+
+
+Technical_Gap = 00-00:00:50
+
+
+SeqId        = 037
+SeqName      = JRM_Science
+SeqNote      = Radiation_Sequence_07_015_GoodPxMap_2017-191T14:43:15.000
+SeqStartTime = 2017-07-10T14:43:15.000
+SeqEndTime   = 2017-07-10T14:47:25.000
+SeqDuration  = 00:04:10
+               00:00:00 JRM_SET_PAR(92,153)
+               00:00:04 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",166deg,1000ms,1000ms,"LOW","LOW","POINT",-104deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:04 JRM_START_HS_REC
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",166deg,1000ms,1000ms,"LOW","LOW","POINT",-104deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",166deg,1000ms,1000ms,"LOW","LOW","POINT",-104deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_STOP_HS_REC
+               00:00:04 JRM_SET_PAR(92,8174)
+               00:00:04 JRM_ERROR_LOG
+
+
+Technical_Gap = 00-00:06:54
+
+
+SeqId        = 038
+SeqName      = JRM_Science
+SeqNote      = Atm. Map
+SeqStartTime = 2017-07-10T14:54:19.000
+SeqEndTime   = 2017-07-10T15:05:14.000
+SeqDuration  = 00:10:55
+               00:00:00 JRM_SET_PAR(74,2475)
+               00:00:04 JRM_SCI_PAR("SCI_I2_S1",20,1,20,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.025111608deg,10.000ms,1000.000ms,"LOW","LOW","POINT",-180.000000000deg,10.000ms,1000.000ms,"LOW","LOW","SPIN",-1.572641822deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:10:39 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:24:05
+
+
+SeqId        = 039
+SeqName      = JRM_Science
+SeqNote      = Atm. Map
+SeqStartTime = 2017-07-10T15:29:19.000
+SeqEndTime   = 2017-07-10T15:40:14.000
+SeqDuration  = 00:10:55
+               00:00:00 JRM_SET_PAR(74,2475)
+               00:00:04 JRM_SCI_PAR("SCI_I2_S1",20,1,20,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.342145659deg,10.000ms,1000.000ms,"LOW","LOW","POINT",-180.000000000deg,10.000ms,1000.000ms,"LOW","LOW","SPIN",-2.115689796deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:10:39 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:24:05
+
+
+SeqId        = 040
+SeqName      = JRM_Science
+SeqNote      = Atm. Map
+SeqStartTime = 2017-07-10T16:04:19.000
+SeqEndTime   = 2017-07-10T16:15:14.000
+SeqDuration  = 00:10:55
+               00:00:00 JRM_SET_PAR(74,2475)
+               00:00:04 JRM_SCI_PAR("SCI_I2_S1",20,1,20,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.028250559deg,10.000ms,1000.000ms,"LOW","LOW","POINT",-180.000000000deg,10.000ms,1000.000ms,"LOW","LOW","SPIN",-1.848874318deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:10:39 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:21:04
+
+
+SeqId        = 041
+SeqName      = JRM_Science
+SeqNote      = Io
+SeqStartTime = 2017-07-10T16:36:18.000
+SeqEndTime   = 2017-07-10T16:47:13.000
+SeqDuration  = 00:10:55
+               00:00:00 JRM_SET_PAR(74,1665)
+               00:00:04 JRM_SCI_PAR("SCI_I1_S1",20,1,20,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.037667412deg,333.300ms,1000.000ms,"LOW","LOW","POINT",-180.000000000deg,333.300ms,1000.000ms,"LOW","LOW","SPIN",-25.419667614deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:10:39 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:35
+
+
+SeqId        = 042
+SeqName      = JRM_Science
+SeqNote      = Io
+SeqStartTime = 2017-07-10T16:47:48.000
+SeqEndTime   = 2017-07-10T16:57:13.000
+SeqDuration  = 00:09:25
+               00:00:00 JRM_SET_PAR(74,1665)
+               00:00:04 JRM_SCI_PAR("SCI_I1_S1",17,1,17,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.043945314deg,333.300ms,1000.000ms,"LOW","LOW","POINT",-180.000000000deg,333.300ms,1000.000ms,"LOW","LOW","SPIN",-26.201280017deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:09:09 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:35
+
+
+SeqId        = 043
+SeqName      = JRM_Science
+SeqNote      = Io
+SeqStartTime = 2017-07-10T16:57:48.000
+SeqEndTime   = 2017-07-10T17:07:13.000
+SeqDuration  = 00:09:25
+               00:00:00 JRM_SET_PAR(74,1665)
+               00:00:04 JRM_SCI_PAR("SCI_I1_S1",17,1,17,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.047084265deg,333.300ms,1000.000ms,"LOW","LOW","POINT",-180.000000000deg,333.300ms,1000.000ms,"LOW","LOW","SPIN",-26.989170431deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:09:09 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:35
+
+
+SeqId        = 044
+SeqName      = JRM_Science
+SeqNote      = Io
+SeqStartTime = 2017-07-10T17:07:48.000
+SeqEndTime   = 2017-07-10T17:13:13.000
+SeqDuration  = 00:05:25
+               00:00:00 JRM_SET_PAR(74,1665)
+               00:00:04 JRM_SCI_PAR("SCI_I1_S1",9,1,9,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.056501118deg,333.300ms,1000.000ms,"LOW","LOW","POINT",-180.000000000deg,333.300ms,1000.000ms,"LOW","LOW","SPIN",-27.463160281deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:05:09 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:07:05
+
+
+SeqId        = 045
+SeqName      = JRM_Science
+SeqNote      = Atm. Map
+SeqStartTime = 2017-07-10T17:20:18.000
+SeqEndTime   = 2017-07-10T17:34:13.000
+SeqDuration  = 00:13:55
+               00:00:00 JRM_SET_PAR(74,2475)
+               00:00:04 JRM_SCI_PAR("SCI_I2_S1",26,1,26,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.025111608deg,10.000ms,1000.000ms,"LOW","LOW","POINT",-180.000000000deg,10.000ms,1000.000ms,"LOW","LOW","SPIN",-2.212998971deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:13:39 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:04
+
+
+SeqId        = 046
+SeqName      = Technical_Block
+SeqNote      = Imager Delay Set to Zero
+SeqStartTime = 2017-07-10T17:34:17.000
+SeqEndTime   = 2017-07-10T17:34:17.000
+SeqDuration  = 00:00:00
+               00:00:00 JRM_SET_PAR(74,0)
+
+
+Technical_Gap = 00-00:03:58
+
+
+SeqId        = 047
+SeqName      = JRM_Science
+SeqNote      = Radiation_Sequence_07_016_Approach_2017-191T17:38:15.000
+SeqStartTime = 2017-07-10T17:38:15.000
+SeqEndTime   = 2017-07-10T17:42:25.000
+SeqDuration  = 00:04:10
+               00:00:00 JRM_SET_PAR(92,153)
+               00:00:04 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",170deg,1000ms,1000ms,"LOW","LOW","POINT",-100deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:04 JRM_START_HS_REC
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",170deg,1000ms,1000ms,"LOW","LOW","POINT",-100deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",170deg,1000ms,1000ms,"LOW","LOW","POINT",-100deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_STOP_HS_REC
+               00:00:04 JRM_SET_PAR(92,8174)
+               00:00:04 JRM_ERROR_LOG
+
+
+Technical_Gap = 00-00:15:53
+
+
+SeqId        = 048
+SeqName      = JRM_Science
+SeqNote      = Atm. Map
+SeqStartTime = 2017-07-10T17:58:18.000
+SeqEndTime   = 2017-07-10T18:14:13.000
+SeqDuration  = 00:15:55
+               00:00:00 JRM_SET_PAR(74,2475)
+               00:00:04 JRM_SCI_PAR("SCI_I2_S1",30,1,30,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.021972657deg,10.000ms,1000.000ms,"LOW","LOW","POINT",-180.000000000deg,10.000ms,1000.000ms,"LOW","LOW","SPIN",-2.489231467deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:15:39 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:04
+
+
+SeqId        = 049
+SeqName      = Technical_Block
+SeqNote      = Imager Delay Set to Zero
+SeqStartTime = 2017-07-10T18:14:17.000
+SeqEndTime   = 2017-07-10T18:14:17.000
+SeqDuration  = 00:00:00
+               00:00:00 JRM_SET_PAR(74,0)
+
+
+Technical_Gap = 00-00:03:58
+
+
+SeqId        = 050
+SeqName      = JRM_Science
+SeqNote      = Radiation_Sequence_07_017_Approach_2017-191T18:18:15.000
+SeqStartTime = 2017-07-10T18:18:15.000
+SeqEndTime   = 2017-07-10T18:22:25.000
+SeqDuration  = 00:04:10
+               00:00:00 JRM_SET_PAR(92,153)
+               00:00:04 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",172deg,1000ms,1000ms,"LOW","LOW","POINT",-98deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:04 JRM_START_HS_REC
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",172deg,1000ms,1000ms,"LOW","LOW","POINT",-98deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",172deg,1000ms,1000ms,"LOW","LOW","POINT",-98deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_STOP_HS_REC
+               00:00:04 JRM_SET_PAR(92,8174)
+               00:00:04 JRM_ERROR_LOG
+
+
+Technical_Gap = 00-00:15:53
+
+
+SeqId        = 051
+SeqName      = JRM_Science
+SeqNote      = Atm. Map
+SeqStartTime = 2017-07-10T18:38:18.000
+SeqEndTime   = 2017-07-10T18:51:43.000
+SeqDuration  = 00:13:25
+               00:00:00 JRM_SET_PAR(74,2475)
+               00:00:04 JRM_SCI_PAR("SCI_I2_S1",25,1,25,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.367257267deg,10.000ms,1000.000ms,"LOW","LOW","POINT",-180.000000000deg,10.000ms,1000.000ms,"LOW","LOW","SPIN",-3.295955914deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:13:09 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:04
+
+
+SeqId        = 052
+SeqName      = Technical_Block
+SeqNote      = Imager Delay Set to Zero
+SeqStartTime = 2017-07-10T18:51:47.000
+SeqEndTime   = 2017-07-10T18:51:47.000
+SeqDuration  = 00:00:00
+               00:00:00 JRM_SET_PAR(74,0)
+
+
+Technical_Gap = 00-00:16:28
+
+
+SeqId        = 053
+SeqName      = JRM_Science
+SeqNote      = Radiation_Sequence_07_018_Approach_2017-191T19:08:15.000
+SeqStartTime = 2017-07-10T19:08:15.000
+SeqEndTime   = 2017-07-10T19:12:25.000
+SeqDuration  = 00:04:10
+               00:00:00 JRM_SET_PAR(92,153)
+               00:00:04 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",173deg,1000ms,1000ms,"LOW","LOW","POINT",-97deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:04 JRM_START_HS_REC
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",173deg,1000ms,1000ms,"LOW","LOW","POINT",-97deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",173deg,1000ms,1000ms,"LOW","LOW","POINT",-97deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_STOP_HS_REC
+               00:00:04 JRM_SET_PAR(92,8174)
+               00:00:04 JRM_ERROR_LOG
+
+
+Technical_Gap = 00-00:05:53
+
+
+SeqId        = 054
+SeqName      = JRM_Science
+SeqNote      = Atm. Map
+SeqStartTime = 2017-07-10T19:18:18.000
+SeqEndTime   = 2017-07-10T19:31:43.000
+SeqDuration  = 00:13:25
+               00:00:00 JRM_SET_PAR(74,2475)
+               00:00:04 JRM_SCI_PAR("SCI_I2_S1",25,1,25,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.398646777deg,10.000ms,1000.000ms,"LOW","LOW","POINT",-180.000000000deg,10.000ms,1000.000ms,"LOW","LOW","SPIN",-3.738555709deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:13:09 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:04
+
+
+SeqId        = 055
+SeqName      = Technical_Block
+SeqNote      = Imager Delay Set to Zero
+SeqStartTime = 2017-07-10T19:31:47.000
+SeqEndTime   = 2017-07-10T19:31:47.000
+SeqDuration  = 00:00:00
+               00:00:00 JRM_SET_PAR(74,0)
+
+
+Technical_Gap = 00-00:06:28
+
+
+SeqId        = 056
+SeqName      = JRM_Science
+SeqNote      = Radiation_Sequence_07_019_Approach_2017-191T19:38:15.000
+SeqStartTime = 2017-07-10T19:38:15.000
+SeqEndTime   = 2017-07-10T19:42:25.000
+SeqDuration  = 00:04:10
+               00:00:00 JRM_SET_PAR(92,153)
+               00:00:04 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",175deg,1000ms,1000ms,"LOW","LOW","POINT",-95deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:04 JRM_START_HS_REC
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",175deg,1000ms,1000ms,"LOW","LOW","POINT",-95deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",175deg,1000ms,1000ms,"LOW","LOW","POINT",-95deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_STOP_HS_REC
+               00:00:04 JRM_SET_PAR(92,8174)
+               00:00:04 JRM_ERROR_LOG
+
+
+Technical_Gap = 00-00:15:53
+
+
+SeqId        = 057
+SeqName      = JRM_Science
+SeqNote      = Atm. Map
+SeqStartTime = 2017-07-10T19:58:18.000
+SeqEndTime   = 2017-07-10T20:11:43.000
+SeqDuration  = 00:13:25
+               00:00:00 JRM_SET_PAR(74,2475)
+               00:00:04 JRM_SCI_PAR("SCI_I2_S1",25,1,25,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.433175238deg,10.000ms,1000.000ms,"LOW","LOW","POINT",-180.000000000deg,10.000ms,1000.000ms,"LOW","LOW","SPIN",-4.221962576deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:13:09 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:04
+
+
+SeqId        = 058
+SeqName      = Technical_Block
+SeqNote      = Imager Delay Set to Zero
+SeqStartTime = 2017-07-10T20:11:47.000
+SeqEndTime   = 2017-07-10T20:11:47.000
+SeqDuration  = 00:00:00
+               00:00:00 JRM_SET_PAR(74,0)
+
+
+Technical_Gap = 00-00:16:28
+
+
+SeqId        = 059
+SeqName      = JRM_Science
+SeqNote      = Radiation_Sequence_07_020_Approach_2017-191T20:28:15.000
+SeqStartTime = 2017-07-10T20:28:15.000
+SeqEndTime   = 2017-07-10T20:32:25.000
+SeqDuration  = 00:04:10
+               00:00:00 JRM_SET_PAR(92,153)
+               00:00:04 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",177deg,1000ms,1000ms,"LOW","LOW","POINT",-93deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:04 JRM_START_HS_REC
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",177deg,1000ms,1000ms,"LOW","LOW","POINT",-93deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",177deg,1000ms,1000ms,"LOW","LOW","POINT",-93deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_STOP_HS_REC
+               00:00:04 JRM_SET_PAR(92,8174)
+               00:00:04 JRM_ERROR_LOG
+
+
+Technical_Gap = 00-00:21:53
+
+
+SeqId        = 060
+SeqName      = JRM_Science
+SeqNote      = Polar Map
+SeqStartTime = 2017-07-10T20:54:18.000
+SeqEndTime   = 2017-07-10T21:06:13.000
+SeqDuration  = 00:11:55
+               00:00:00 JRM_SET_PAR(74,0)
+               00:00:04 JRM_SCI_PAR("SCI_I2_S0",22,1,22,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.128696991deg,10.000ms,0.000ms,"LOW","LOW","POINT",-180.000000000deg,10.000ms,0.000ms,"LOW","LOW","SPIN",5.672183178deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:11:39 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:35
+
+
+SeqId        = 061
+SeqName      = JRM_Science
+SeqNote      = Polar Map
+SeqStartTime = 2017-07-10T21:06:48.000
+SeqEndTime   = 2017-07-10T21:19:43.000
+SeqDuration  = 00:12:55
+               00:00:00 JRM_SET_PAR(74,0)
+               00:00:04 JRM_SCI_PAR("SCI_I2_S0",24,1,24,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.128696991deg,10.000ms,0.000ms,"LOW","LOW","POINT",-180.000000000deg,10.000ms,0.000ms,"LOW","LOW","SPIN",5.750658319deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:12:39 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:35
+
+
+SeqId        = 062
+SeqName      = JRM_Science
+SeqNote      = Polar Map
+SeqStartTime = 2017-07-10T21:20:18.000
+SeqEndTime   = 2017-07-10T21:34:13.000
+SeqDuration  = 00:13:55
+               00:00:00 JRM_SET_PAR(74,0)
+               00:00:04 JRM_SCI_PAR("SCI_I2_S0",26,1,26,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.128696991deg,10.000ms,0.000ms,"LOW","LOW","POINT",-180.000000000deg,10.000ms,0.000ms,"LOW","LOW","SPIN",5.835411471deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:13:39 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:34
+
+
+SeqId        = 063
+SeqName      = JRM_Science
+SeqNote      = Polar Map
+SeqStartTime = 2017-07-10T21:34:47.000
+SeqEndTime   = 2017-07-10T21:50:12.000
+SeqDuration  = 00:15:25
+               00:00:00 JRM_SET_PAR(74,0)
+               00:00:04 JRM_SCI_PAR("SCI_I2_S0",29,1,29,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.125558040deg,10.000ms,0.000ms,"LOW","LOW","POINT",-180.000000000deg,10.000ms,0.000ms,"LOW","LOW","SPIN",5.929581640deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:15:09 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:35
+
+
+SeqId        = 064
+SeqName      = JRM_Science
+SeqNote      = Polar Map
+SeqStartTime = 2017-07-10T21:50:47.000
+SeqEndTime   = 2017-07-10T21:55:12.000
+SeqDuration  = 00:04:25
+               00:00:00 JRM_SET_PAR(74,0)
+               00:00:04 JRM_SCI_PAR("SCI_I2_S0",7,1,7,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.125558040deg,10.000ms,0.000ms,"LOW","LOW","POINT",-180.000000000deg,10.000ms,0.000ms,"LOW","LOW","SPIN",6.033168826deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:04:09 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:35
+
+
+SeqId        = 065
+SeqName      = JRM_Science
+SeqNote      = N. Aurora
+SeqStartTime = 2017-07-10T21:55:47.000
+SeqEndTime   = 2017-07-10T22:08:12.000
+SeqDuration  = 00:12:25
+               00:00:00 JRM_SET_PAR(74,0)
+               00:00:04 JRM_SCI_PAR("SCI_I3_S1",23,1,23,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.266810835deg,1000.000ms,1000.000ms,"LOW","LOW","POINT",-180.000000000deg,1000.000ms,1000.000ms,"LOW","LOW","SPIN",2.859634131deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:12:09 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:35
+
+
+SeqId        = 066
+SeqName      = JRM_Science
+SeqNote      = N. Aurora
+SeqStartTime = 2017-07-10T22:08:47.000
+SeqEndTime   = 2017-07-10T22:24:42.000
+SeqDuration  = 00:15:55
+               00:00:00 JRM_SET_PAR(74,0)
+               00:00:04 JRM_SCI_PAR("SCI_I3_S1",30,1,30,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.232282374deg,1000.000ms,1000.000ms,"LOW","LOW","POINT",-180.000000000deg,1000.000ms,1000.000ms,"LOW","LOW","SPIN",2.498648484deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:15:39 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:35
+
+
+SeqId        = 067
+SeqName      = JRM_Science
+SeqNote      = N. Aurora
+SeqStartTime = 2017-07-10T22:25:17.000
+SeqEndTime   = 2017-07-10T22:43:12.000
+SeqDuration  = 00:17:55
+               00:00:00 JRM_SET_PAR(74,0)
+               00:00:04 JRM_SCI_PAR("SCI_I3_S1",34,1,34,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.229143423deg,1000.000ms,1000.000ms,"LOW","LOW","POINT",-180.000000000deg,1000.000ms,1000.000ms,"LOW","LOW","SPIN",2.115689796deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:17:39 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:35
+
+
+SeqId        = 068
+SeqName      = JRM_Science
+SeqNote      = N. Aurora
+SeqStartTime = 2017-07-10T22:43:47.000
+SeqEndTime   = 2017-07-10T23:05:42.000
+SeqDuration  = 00:21:55
+               00:00:00 JRM_SET_PAR(74,0)
+               00:00:04 JRM_SCI_PAR("SCI_I3_S1",42,1,42,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.226004472deg,1000.000ms,1000.000ms,"LOW","LOW","POINT",-180.000000000deg,1000.000ms,1000.000ms,"LOW","LOW","SPIN",1.133181033deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:21:39 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:35
+
+
+SeqId        = 069
+SeqName      = JRM_Science
+SeqNote      = N. Aurora
+SeqStartTime = 2017-07-10T23:06:17.000
+SeqEndTime   = 2017-07-10T23:36:13.000
+SeqDuration  = 00:29:56
+               00:00:00 JRM_SET_PAR(74,0)
+               00:00:04 JRM_SCI_PAR("SCI_I3_S1",58,1,29,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.219726570deg,1000.000ms,1000.000ms,"LOW","LOW","POINT",-180.000000000deg,1000.000ms,1000.000ms,"LOW","LOW","SPIN",-0.621523115deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:29:40 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:33
+
+
+SeqId        = 070
+SeqName      = JRM_Science
+SeqNote      = N. Aurora
+SeqStartTime = 2017-07-10T23:36:46.000
+SeqEndTime   = 2017-07-11T00:19:12.000
+SeqDuration  = 00:42:26
+               00:00:00 JRM_SET_PAR(74,0)
+               00:00:04 JRM_SCI_PAR("SCI_I3_S1",83,1,42,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.204031815deg,1000.000ms,1000.000ms,"LOW","LOW","POINT",-180.000000000deg,1000.000ms,1000.000ms,"LOW","LOW","SPIN",-2.175330904deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:42:10 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:08
+
+
+SeqId        = 071
+SeqName      = JRM_Science
+SeqNote      = Radiation_Sequence_07_022_NXrayHotSpot_2017-192T00:19:20.000
+SeqStartTime = 2017-07-11T00:19:20.000
+SeqEndTime   = 2017-07-11T00:23:30.000
+SeqDuration  = 00:04:10
+               00:00:00 JRM_SET_PAR(92,153)
+               00:00:04 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",91deg,1000ms,1000ms,"LOW","LOW","POINT",-179deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:04 JRM_START_HS_REC
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",91deg,1000ms,1000ms,"LOW","LOW","POINT",-179deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_SCI_PAR("SCI_I1_S0",1,1,0,"IDIS_SDIS","HSSL","ENABLE","RN","DISABLE",0,0deg,0ms,0ms,"LOW","LOW","POINT",91deg,1000ms,1000ms,"LOW","LOW","POINT",-179deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:02 JRM_SCIENCE
+               00:01:12 JRM_STOP_HS_REC
+               00:00:04 JRM_SET_PAR(92,8174)
+               00:00:04 JRM_ERROR_LOG
+
+
+Technical_Gap = 00-00:02:15
+
+
+SeqId        = 072
+SeqName      = JRM_Science
+SeqNote      = North Pole
+SeqStartTime = 2017-07-11T00:25:45.000
+SeqEndTime   = 2017-07-11T00:31:11.000
+SeqDuration  = 00:05:26
+               00:00:00 JRM_SET_PAR(74,0)
+               00:00:04 JRM_SCI_PAR("SCI_I2_S0",9,1,9,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,1.971261228deg,333.000ms,0.000ms,"LOW","LOW","POINT",-180.000000000deg,333.000ms,0.000ms,"LOW","LOW","SPIN",3.352458016deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:05:10 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:34
+
+
+SeqId        = 073
+SeqName      = JRM_Science
+SeqNote      = North Pole
+SeqStartTime = 2017-07-11T00:31:45.000
+SeqEndTime   = 2017-07-11T00:39:11.000
+SeqDuration  = 00:07:26
+               00:00:00 JRM_SET_PAR(74,0)
+               00:00:04 JRM_SCI_PAR("SCI_I2_S0",13,1,13,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,1.412527950deg,333.000ms,0.000ms,"LOW","LOW","POINT",-180.000000000deg,333.000ms,0.000ms,"LOW","LOW","SPIN",2.093716757deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:07:10 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:34
+
+
+SeqId        = 074
+SeqName      = JRM_Science
+SeqNote      = North Pole
+SeqStartTime = 2017-07-11T00:39:45.000
+SeqEndTime   = 2017-07-11T00:48:41.000
+SeqDuration  = 00:08:56
+               00:00:00 JRM_SET_PAR(74,0)
+               00:00:04 JRM_SCI_PAR("SCI_I2_S0",16,1,16,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,1.371721587deg,333.000ms,0.000ms,"LOW","LOW","POINT",-180.000000000deg,333.000ms,0.000ms,"LOW","LOW","SPIN",0.153811276deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:08:40 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:33
+
+
+SeqId        = 075
+SeqName      = JRM_Science
+SeqNote      = North Pole
+SeqStartTime = 2017-07-11T00:49:14.000
+SeqEndTime   = 2017-07-11T01:00:11.000
+SeqDuration  = 00:10:57
+               00:00:00 JRM_SET_PAR(74,0)
+               00:00:04 JRM_SCI_PAR("SCI_I2_S0",20,1,20,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,1.283830959deg,333.000ms,0.000ms,"LOW","LOW","POINT",-180.000000000deg,333.000ms,0.000ms,"LOW","LOW","SPIN",-3.386987078deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:10:41 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:33
+
+
+SeqId        = 076
+SeqName      = JRM_Science
+SeqNote      = North Pole
+SeqStartTime = 2017-07-11T01:00:44.000
+SeqEndTime   = 2017-07-11T01:16:11.000
+SeqDuration  = 00:15:27
+               00:00:00 JRM_SET_PAR(74,0)
+               00:00:04 JRM_SCI_PAR("SCI_I2_S0",29,1,29,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,1.026436977deg,333.000ms,0.000ms,"LOW","LOW","POINT",-180.000000000deg,333.000ms,0.000ms,"LOW","LOW","SPIN",-10.628673073deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:15:11 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:31
+
+
+SeqId        = 077
+SeqName      = JRM_Science
+SeqNote      = North Pole
+SeqStartTime = 2017-07-11T01:16:42.000
+SeqEndTime   = 2017-07-11T01:33:37.000
+SeqDuration  = 00:16:55
+               00:00:00 JRM_SET_PAR(74,0)
+               00:00:04 JRM_SCI_PAR("SCI_I2_S0",32,1,32,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.194614962deg,333.000ms,0.000ms,"LOW","LOW","POINT",-180.000000000deg,333.000ms,0.000ms,"LOW","LOW","SPIN",-28.646565405deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:16:39 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:33
+
+
+SeqId        = 078
+SeqName      = JRM_Science
+SeqNote      = Nadir
+SeqStartTime = 2017-07-11T01:34:10.000
+SeqEndTime   = 2017-07-11T02:25:34.000
+SeqDuration  = 00:51:24
+               00:00:00 JRM_SET_PAR(74,0)
+               00:00:04 JRM_SCI_PAR("SCI_I2_S0",101,1,34,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.000000000deg,333.000ms,0.000ms,"LOW","LOW","POINT",-180.000000000deg,333.000ms,0.000ms,"LOW","LOW","SPIN",0.000000000deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:51:08 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:27
+
+
+SeqId        = 079
+SeqName      = JRM_Science
+SeqNote      = South Pole
+SeqStartTime = 2017-07-11T02:26:01.000
+SeqEndTime   = 2017-07-11T02:34:26.000
+SeqDuration  = 00:08:25
+               00:00:00 JRM_SET_PAR(74,0)
+               00:00:04 JRM_SCI_PAR("SCI_I2_S0",15,1,15,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.624651249deg,333.000ms,0.000ms,"LOW","LOW","POINT",-180.000000000deg,333.000ms,0.000ms,"LOW","LOW","SPIN",25.155991141deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:08:09 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:34
+
+
+SeqId        = 080
+SeqName      = JRM_Science
+SeqNote      = South Pole
+SeqStartTime = 2017-07-11T02:35:00.000
+SeqEndTime   = 2017-07-11T02:46:26.000
+SeqDuration  = 00:11:26
+               00:00:00 JRM_SET_PAR(74,0)
+               00:00:04 JRM_SCI_PAR("SCI_I2_S0",21,1,21,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,1.048409634deg,333.000ms,0.000ms,"LOW","LOW","POINT",-180.000000000deg,333.000ms,0.000ms,"LOW","LOW","SPIN",4.225101582deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:11:10 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:33
+
+
+SeqId        = 081
+SeqName      = JRM_Science
+SeqNote      = South Pole
+SeqStartTime = 2017-07-11T02:46:59.000
+SeqEndTime   = 2017-07-11T02:57:56.000
+SeqDuration  = 00:10:57
+               00:00:00 JRM_SET_PAR(74,0)
+               00:00:04 JRM_SCI_PAR("SCI_I2_S0",20,1,20,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,1.280692008deg,333.000ms,0.000ms,"LOW","LOW","POINT",-180.000000000deg,333.000ms,0.000ms,"LOW","LOW","SPIN",-6.136756012deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:10:41 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:33
+
+
+SeqId        = 082
+SeqName      = JRM_Science
+SeqNote      = South Pole
+SeqStartTime = 2017-07-11T02:58:29.000
+SeqEndTime   = 2017-07-11T03:08:25.000
+SeqDuration  = 00:09:56
+               00:00:00 JRM_SET_PAR(74,0)
+               00:00:04 JRM_SCI_PAR("SCI_I2_S0",18,1,18,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,1.384277391deg,333.000ms,0.000ms,"LOW","LOW","POINT",-180.000000000deg,333.000ms,0.000ms,"LOW","LOW","SPIN",-9.661859338deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:09:40 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:33
+
+
+SeqId        = 083
+SeqName      = JRM_Science
+SeqNote      = South Pole
+SeqStartTime = 2017-07-11T03:08:58.000
+SeqEndTime   = 2017-07-11T03:17:24.000
+SeqDuration  = 00:08:26
+               00:00:00 JRM_SET_PAR(74,0)
+               00:00:04 JRM_SCI_PAR("SCI_I2_S0",15,1,15,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,1.437639558deg,333.000ms,0.000ms,"LOW","LOW","POINT",-180.000000000deg,333.000ms,0.000ms,"LOW","LOW","SPIN",-10.804457388deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:08:10 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:34
+
+
+SeqId        = 084
+SeqName      = JRM_Science
+SeqNote      = South Pole
+SeqStartTime = 2017-07-11T03:17:58.000
+SeqEndTime   = 2017-07-11T03:25:24.000
+SeqDuration  = 00:07:26
+               00:00:00 JRM_SET_PAR(74,0)
+               00:00:04 JRM_SCI_PAR("SCI_I2_S0",13,1,13,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,1.465890117deg,333.000ms,0.000ms,"LOW","LOW","POINT",-180.000000000deg,333.000ms,0.000ms,"LOW","LOW","SPIN",-11.105801929deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:07:10 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:01:33
+
+
+SeqId        = 085
+SeqName      = JRM_Science
+SeqNote      = S. Aurora
+SeqStartTime = 2017-07-11T03:26:57.000
+SeqEndTime   = 2017-07-11T03:59:23.000
+SeqDuration  = 00:32:26
+               00:00:00 JRM_SET_PAR(74,0)
+               00:00:04 JRM_SCI_PAR("SCI_I3_S1",63,1,32,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.291922443deg,1000.000ms,1000.000ms,"LOW","LOW","POINT",-180.000000000deg,1000.000ms,1000.000ms,"LOW","LOW","SPIN",-15.971260660deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:32:10 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:34
+
+
+SeqId        = 086
+SeqName      = JRM_Science
+SeqNote      = S. Aurora
+SeqStartTime = 2017-07-11T03:59:57.000
+SeqEndTime   = 2017-07-11T04:25:23.000
+SeqDuration  = 00:25:26
+               00:00:00 JRM_SET_PAR(74,0)
+               00:00:04 JRM_SCI_PAR("SCI_I3_S1",49,1,49,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.295061394deg,1000.000ms,1000.000ms,"LOW","LOW","POINT",-180.000000000deg,1000.000ms,1000.000ms,"LOW","LOW","SPIN",-13.180684652deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:25:10 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:33
+
+
+SeqId        = 087
+SeqName      = JRM_Science
+SeqNote      = S. Aurora
+SeqStartTime = 2017-07-11T04:25:56.000
+SeqEndTime   = 2017-07-11T04:47:52.000
+SeqDuration  = 00:21:56
+               00:00:00 JRM_SET_PAR(74,0)
+               00:00:04 JRM_SCI_PAR("SCI_I3_S1",42,1,42,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.301339296deg,1000.000ms,1000.000ms,"LOW","LOW","POINT",-180.000000000deg,1000.000ms,1000.000ms,"LOW","LOW","SPIN",-12.097727709deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:21:40 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:34
+
+
+SeqId        = 088
+SeqName      = JRM_Science
+SeqNote      = S. Aurora
+SeqStartTime = 2017-07-11T04:48:26.000
+SeqEndTime   = 2017-07-11T05:07:21.000
+SeqDuration  = 00:18:55
+               00:00:00 JRM_SET_PAR(74,0)
+               00:00:04 JRM_SCI_PAR("SCI_I3_S1",36,1,36,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.304478247deg,1000.000ms,1000.000ms,"LOW","LOW","POINT",-180.000000000deg,1000.000ms,1000.000ms,"LOW","LOW","SPIN",-10.898627557deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:18:39 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:35
+
+
+SeqId        = 089
+SeqName      = JRM_Science
+SeqNote      = S. Aurora
+SeqStartTime = 2017-07-11T05:07:56.000
+SeqEndTime   = 2017-07-11T05:24:51.000
+SeqDuration  = 00:16:55
+               00:00:00 JRM_SET_PAR(74,0)
+               00:00:04 JRM_SCI_PAR("SCI_I3_S1",32,1,32,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.307617198deg,1000.000ms,1000.000ms,"LOW","LOW","POINT",-180.000000000deg,1000.000ms,1000.000ms,"LOW","LOW","SPIN",-10.063652059deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:16:39 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:35
+
+
+SeqId        = 090
+SeqName      = JRM_Science
+SeqNote      = S. Aurora
+SeqStartTime = 2017-07-11T05:25:26.000
+SeqEndTime   = 2017-07-11T05:40:51.000
+SeqDuration  = 00:15:25
+               00:00:00 JRM_SET_PAR(74,0)
+               00:00:04 JRM_SCI_PAR("SCI_I3_S1",29,1,29,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.307617198deg,1000.000ms,1000.000ms,"LOW","LOW","POINT",-180.000000000deg,1000.000ms,1000.000ms,"LOW","LOW","SPIN",-9.432711926deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:15:09 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:35
+
+
+SeqId        = 091
+SeqName      = JRM_Science
+SeqNote      = S. Aurora
+SeqStartTime = 2017-07-11T05:41:26.000
+SeqEndTime   = 2017-07-11T05:55:51.000
+SeqDuration  = 00:14:25
+               00:00:00 JRM_SET_PAR(74,0)
+               00:00:04 JRM_SCI_PAR("SCI_I3_S1",27,1,27,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.307617198deg,1000.000ms,1000.000ms,"LOW","LOW","POINT",-180.000000000deg,1000.000ms,1000.000ms,"LOW","LOW","SPIN",-8.933610031deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:14:09 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:34
+
+
+SeqId        = 092
+SeqName      = JRM_Science
+SeqNote      = S. Aurora
+SeqStartTime = 2017-07-11T05:56:25.000
+SeqEndTime   = 2017-07-11T06:10:20.000
+SeqDuration  = 00:13:55
+               00:00:00 JRM_SET_PAR(74,0)
+               00:00:04 JRM_SCI_PAR("SCI_I3_S1",26,1,26,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.310756149deg,1000.000ms,1000.000ms,"LOW","LOW","POINT",-180.000000000deg,1000.000ms,1000.000ms,"LOW","LOW","SPIN",-8.519261287deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:13:39 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:35
+
+
+SeqId        = 093
+SeqName      = JRM_Science
+SeqNote      = S. Aurora
+SeqStartTime = 2017-07-11T06:10:55.000
+SeqEndTime   = 2017-07-11T06:23:50.000
+SeqDuration  = 00:12:55
+               00:00:00 JRM_SET_PAR(74,0)
+               00:00:04 JRM_SCI_PAR("SCI_I3_S1",24,1,24,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.310756149deg,1000.000ms,1000.000ms,"LOW","LOW","POINT",-180.000000000deg,1000.000ms,1000.000ms,"LOW","LOW","SPIN",-8.161414645deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:12:39 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:04
+
+
+SeqId        = 094
+SeqName      = JRM-POWER_OFF
+SeqNote      = NaN
+SeqStartTime = 2017-07-11T06:23:54.000
+SeqEndTime   = 2017-07-11T06:23:54.000
+SeqDuration  = 00:00:00
+               00:00:00 JIRAM_POWER_OFF
+
+
+Technical_Gap = 00-08:27:35
+
+
+SeqId        = 095
+SeqName      = JRM-POWER_ON
+SeqNote      = NaN
+SeqStartTime = 2017-07-11T14:51:29.000
+SeqEndTime   = 2017-07-11T14:51:29.000
+SeqDuration  = 00:00:00
+               00:00:00 JIRAM_POWER_ON
+
+
+Technical_Gap = 00-00:02:43
+
+
+SeqId        = 096
+SeqName      = JRM_StandBy
+SeqNote      = NaN
+SeqStartTime = 2017-07-11T14:54:12.000
+SeqEndTime   = 2017-07-11T14:54:20.000
+SeqDuration  = 00:00:08
+               00:00:00 JRM_SET_PAR(111,10)
+               00:00:04 JRM_STANDBY("ON","ON","ON")
+               00:00:04 JRM_SCI_PAR("SCI_I1_S3",120,1,10,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,3.000000000deg,0.400ms,30.000ms,"LOW","LOW","POINT",-180.000000000deg,0.400ms,30.000ms,"LOW","LOW","SPIN",0.000000000deg,"NO_SUMMED_SCI")
+
+
+Technical_Gap = 00-00:00:04
+
+
+SeqId        = 097
+SeqName      = JRM_Science
+SeqNote      = Callisto
+SeqStartTime = 2017-07-11T14:54:24.000
+SeqEndTime   = 2017-07-11T15:05:19.000
+SeqDuration  = 00:10:55
+               00:00:00 JRM_SET_PAR(74,0)
+               00:00:04 JRM_SCI_PAR("SCI_I2_S1",20,1,20,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.006277902deg,1000.000ms,1000.000ms,"LOW","LOW","POINT",-180.000000000deg,1000.000ms,1000.000ms,"LOW","LOW","SPIN",109.946811293deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:10:39 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:35
+
+
+SeqId        = 098
+SeqName      = JRM_Science
+SeqNote      = Callisto
+SeqStartTime = 2017-07-11T15:05:54.000
+SeqEndTime   = 2017-07-11T15:15:19.000
+SeqDuration  = 00:09:25
+               00:00:00 JRM_SET_PAR(74,0)
+               00:00:04 JRM_SCI_PAR("SCI_I2_S1",17,1,17,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.012555804deg,1000.000ms,1000.000ms,"LOW","LOW","POINT",-180.000000000deg,1000.000ms,1000.000ms,"LOW","LOW","SPIN",109.786722006deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:09:09 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:35
+
+
+SeqId        = 099
+SeqName      = JRM_Science
+SeqNote      = Callisto
+SeqStartTime = 2017-07-11T15:15:54.000
+SeqEndTime   = 2017-07-11T15:25:19.000
+SeqDuration  = 00:09:25
+               00:00:00 JRM_SET_PAR(74,0)
+               00:00:04 JRM_SCI_PAR("SCI_I2_S1",17,1,17,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.012555804deg,1000.000ms,1000.000ms,"LOW","LOW","POINT",-180.000000000deg,1000.000ms,1000.000ms,"LOW","LOW","SPIN",109.623493713deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:09:09 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:35
+
+
+SeqId        = 100
+SeqName      = JRM_Science
+SeqNote      = Callisto
+SeqStartTime = 2017-07-11T15:25:54.000
+SeqEndTime   = 2017-07-11T15:35:19.000
+SeqDuration  = 00:09:25
+               00:00:00 JRM_SET_PAR(74,0)
+               00:00:04 JRM_SCI_PAR("SCI_I2_S1",17,1,17,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.012555804deg,1000.000ms,1000.000ms,"LOW","LOW","POINT",-180.000000000deg,1000.000ms,1000.000ms,"LOW","LOW","SPIN",109.460265420deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:09:09 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:35
+
+
+SeqId        = 101
+SeqName      = JRM_Science
+SeqNote      = Callisto
+SeqStartTime = 2017-07-11T15:35:54.000
+SeqEndTime   = 2017-07-11T15:45:19.000
+SeqDuration  = 00:09:25
+               00:00:00 JRM_SET_PAR(74,0)
+               00:00:04 JRM_SCI_PAR("SCI_I2_S1",17,1,17,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.012555804deg,1000.000ms,1000.000ms,"LOW","LOW","POINT",-180.000000000deg,1000.000ms,1000.000ms,"LOW","LOW","SPIN",109.290759116deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:09:09 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:35
+
+
+SeqId        = 102
+SeqName      = JRM_Science
+SeqNote      = Callisto
+SeqStartTime = 2017-07-11T15:45:54.000
+SeqEndTime   = 2017-07-11T15:55:19.000
+SeqDuration  = 00:09:25
+               00:00:00 JRM_SET_PAR(74,0)
+               00:00:04 JRM_SCI_PAR("SCI_I2_S1",17,1,17,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.012555804deg,1000.000ms,1000.000ms,"LOW","LOW","POINT",-180.000000000deg,1000.000ms,1000.000ms,"LOW","LOW","SPIN",109.118113806deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:09:09 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:35
+
+
+SeqId        = 103
+SeqName      = JRM_Science
+SeqNote      = Callisto
+SeqStartTime = 2017-07-11T15:55:54.000
+SeqEndTime   = 2017-07-11T16:05:19.000
+SeqDuration  = 00:09:25
+               00:00:00 JRM_SET_PAR(74,0)
+               00:00:04 JRM_SCI_PAR("SCI_I2_S1",17,1,17,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.012555804deg,1000.000ms,1000.000ms,"LOW","LOW","POINT",-180.000000000deg,1000.000ms,1000.000ms,"LOW","LOW","SPIN",108.942329491deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:09:09 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:35
+
+
+SeqId        = 104
+SeqName      = JRM_Science
+SeqNote      = Callisto
+SeqStartTime = 2017-07-11T16:05:54.000
+SeqEndTime   = 2017-07-11T16:15:19.000
+SeqDuration  = 00:09:25
+               00:00:00 JRM_SET_PAR(74,0)
+               00:00:04 JRM_SCI_PAR("SCI_I2_S1",17,1,17,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.012555804deg,1000.000ms,1000.000ms,"LOW","LOW","POINT",-180.000000000deg,1000.000ms,1000.000ms,"LOW","LOW","SPIN",108.766545176deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:09:09 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:35
+
+
+SeqId        = 105
+SeqName      = JRM_Science
+SeqNote      = Callisto
+SeqStartTime = 2017-07-11T16:15:54.000
+SeqEndTime   = 2017-07-11T16:25:19.000
+SeqDuration  = 00:09:25
+               00:00:00 JRM_SET_PAR(74,0)
+               00:00:04 JRM_SCI_PAR("SCI_I2_S1",17,1,17,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.012555804deg,1000.000ms,1000.000ms,"LOW","LOW","POINT",-180.000000000deg,1000.000ms,1000.000ms,"LOW","LOW","SPIN",108.584482849deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:09:09 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:35
+
+
+SeqId        = 106
+SeqName      = JRM_Science
+SeqNote      = Callisto
+SeqStartTime = 2017-07-11T16:25:54.000
+SeqEndTime   = 2017-07-11T16:35:19.000
+SeqDuration  = 00:09:25
+               00:00:00 JRM_SET_PAR(74,0)
+               00:00:04 JRM_SCI_PAR("SCI_I2_S1",17,1,17,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.012555804deg,1000.000ms,1000.000ms,"LOW","LOW","POINT",-180.000000000deg,1000.000ms,1000.000ms,"LOW","LOW","SPIN",108.402420522deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:09:09 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:35
+
+
+SeqId        = 107
+SeqName      = JRM_Science
+SeqNote      = Callisto
+SeqStartTime = 2017-07-11T16:35:54.000
+SeqEndTime   = 2017-07-11T16:45:19.000
+SeqDuration  = 00:09:25
+               00:00:00 JRM_SET_PAR(74,0)
+               00:00:04 JRM_SCI_PAR("SCI_I2_S1",17,1,17,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.012555804deg,1000.000ms,1000.000ms,"LOW","LOW","POINT",-180.000000000deg,1000.000ms,1000.000ms,"LOW","LOW","SPIN",108.214080184deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:09:09 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:35
+
+
+SeqId        = 108
+SeqName      = JRM_Science
+SeqNote      = Callisto
+SeqStartTime = 2017-07-11T16:45:54.000
+SeqEndTime   = 2017-07-11T16:55:19.000
+SeqDuration  = 00:09:25
+               00:00:00 JRM_SET_PAR(74,0)
+               00:00:04 JRM_SCI_PAR("SCI_I2_S1",17,1,17,"IDIS_SDIS","HSSL","ENABLE","DARK","DISABLE",0,0.012555804deg,1000.000ms,1000.000ms,"LOW","LOW","POINT",-180.000000000deg,1000.000ms,1000.000ms,"LOW","LOW","SPIN",108.025739846deg,"NO_SUMMED_SCI")
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_SCIENCE
+               00:09:09 JRM_ERROR_LOG
+               00:00:04 JRM_STOP_HS_REC
+
+
+Technical_Gap = 00-00:00:04
+
+
+SeqId        = 109
+SeqName      = JRM_Calibration
+SeqNote      = NaN
+SeqStartTime = 2017-07-11T16:55:23.000
+SeqEndTime   = 2017-07-11T16:59:39.000
+SeqDuration  = 00:04:16
+               00:00:00 JRM_CAL_PAR(8,14,8,14,30,700,30,700,30,700,30,700,30,700,200,200,153,153)
+               00:00:04 JRM_GET_PAR(6000)
+               00:00:04 JRM_START_HS_REC
+               00:00:04 JRM_CALIBRATION("CAL_I1_S1","IDIS_SDIS","DISABLE",1,"LAMP_1")
+               00:04:00 JRM_STOP_HS_REC
+               00:00:04 JRM_ERROR_LOG
+
+
+Technical_Gap = 00-00:00:04
+
+
+SeqId        = 110
+SeqName      = JRM-POWER_OFF
+SeqNote      = NaN
+SeqStartTime = 2017-07-11T16:59:43.000
+SeqEndTime   = 2017-07-11T16:59:43.000
+SeqDuration  = 00:00:00
+               00:00:00 JIRAM_POWER_OFF
+
+
+Technical_Gap = 00-00:00:16
+
+
+SeqId        = 111
+SeqName      = JRM_Heater_Op
+SeqNote      = NaN
+SeqStartTime = 2017-07-11T16:59:59.000
+SeqEndTime   = 2017-07-11T17:00:02.000
+SeqDuration  = 00:00:03
+               00:00:00 THRM_SET_PT_SEL("JIRAM_OH","NON_OPERATIONAL")
+               00:00:01 THRM_SET_PT_SEL("JIRAM_DECON","NON_OPERATIONAL")
+               00:00:02 THRM_SET_PT_SEL("JIRAM_ELECT_BP","NON_OPERATIONAL")
+
+#  07-Jun-2017 12:45:49. Simulation Tool Approved
