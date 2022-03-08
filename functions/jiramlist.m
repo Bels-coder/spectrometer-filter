@@ -45,7 +45,7 @@ end
 
 
 backupfile=[fil '.' myseqid '.' tmpx  '.' ins '.mat'];
-backupfile=['/home/bels/Documents/matlab/Aurorae_INAF/jiramlist_saves/',backupfile]; %CAMBIARE
+backupfile=['/Users/Utente/Desktop/noise/matlab/Aurorae_INAF/jiramlist_saves/',backupfile]; %CAMBIARE
 if exist(backupfile,'file') && (backflag==1)
     load(backupfile);
     
