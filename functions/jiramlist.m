@@ -153,8 +153,9 @@ disp(['TROVATI ' num2str(numel(a)) ' FILE SUL SERVER'])
 if isempty(a)
     varargout{1}=[];
     
-    f=ftp('ftp.sic.rm.cnr.it','junoadm','Jun0Adm.14');
-    
+    % ===========================================
+    % INSERT FTP STRING HERE 
+    % ===========================================
     return
 end
 ii=0;
