@@ -19,7 +19,7 @@ if ischar(M)
 	else
 		originale=fileparts(M(1:k(1)-1));
 		comune=strrep(M,originale,'');
-		attuale= '/home/bels/Documents/matlab/Aurorae_INAF/jiramdati_saves/JIRAM_ARCHIVE';	%cambiare con folder dove vanno salvati i dati
+		attuale= '/Users/Utente/Desktop/noise/matlab/Aurorae_INAF/jiramdati_saves/JIRAM_ARCHIVE';	%cambiare con folder dove vanno salvati i dati
 		%attuale='~/temporanea/JIRAM_ARCHIVE';
 		reale=[attuale comune '.mat'];
 		reale2=[attuale comune(1:end-4) '.mat'];
