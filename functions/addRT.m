@@ -1,4 +1,4 @@
-function M=datart(M, mk, flag)
+function M=addRT(M, mk, flag)
 cspice_kclear;
 if nargin>=2;
     cspice_furnsh({mk});
