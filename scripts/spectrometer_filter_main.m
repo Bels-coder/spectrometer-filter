@@ -15,6 +15,8 @@
 % = 4 =
   % Spike removal
   %
+  % = 4b = 
+  % Here the signal should be converted from counts to power
 % = 5 =
   % RMS filter
   %
