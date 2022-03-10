@@ -1,28 +1,6 @@
 % The script applies the odd-even correction to the spectra
 
-%% IDL code
-  % oe = findgen(n_elements(wave))
-  % par= where(oe mod 2 eq 0, complement= dis )
-  % spet = speto*0
-
-  % for i = 0,dim1-1 do begin
-  %  for j = 0,dim2-1 do begin
-
-  %  sp = reform(speto(i,j,*))
-  %  spp = 0
-  %  spd = 0
-  
-  %  spp = interpol( sp(par), wave(par), wave, /spline)
-  %  spd = interpol( sp(dis), wave(dis), wave, /spline)
-  %  sp = 0.5*(spd+spp)
-  %  spet(i, j, *) = sp
-
-  %  endfor
-  % endfor
-
-%%
-
-wvl = dlmread('JIRAM_WVL_00.txt');                               % UPLOAD 'JIRAM_WVL_00.txt' FILE
+wvl = dlmread('JIRAM_WVL_00.txt');                               
 oe = 1:1:size(wvl); 
 par = oe(mod(oe,2)~=1);
 dis = oe(mod(oe,2)~=0);
