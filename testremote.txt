@@ -1,2 +1,7 @@
 txt generated on server
+<<<<<<< HEAD
 1234
+=======
+
+asdasd
+>>>>>>> refs/remotes/origin/Data-upload
