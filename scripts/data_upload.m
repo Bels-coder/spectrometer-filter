@@ -38,6 +38,6 @@ end
 
 iL = input('Enter index of the sequence:\n');
 
-M = jiramdati(strrep(L.file{iL},'_TEMP','');
+M = jiramdati(strrep(L.file{iL},'_TEMP',''));
 selectdata(M,mode_id);
 M = addRT(M,mk);
