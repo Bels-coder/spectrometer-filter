@@ -1,7 +1,7 @@
 % ======================================
 % This script run jiramdati in order to create the .mat files corresponding to all the data provided by Alessandro Mura.
 % ======================================
-system('curlftpfs junoadm:Jun0Adm.14@ftp.sic.rm.cnr.it /home/bels/ftp');
+system('mount_ftp junoadm:Jun0Adm.14@ftp.sic.rm.cnr.it /Users/Utente/Desktop/noise/ftp');
 
 %{
 % === upload JM0003 ===
