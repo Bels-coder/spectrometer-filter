@@ -15,6 +15,9 @@ function [signal,h3_bands,h3_spe,m_h3_spe,rms,rms_h3_spe,FRMS,DRMS,DSCALE,RES,FI
 % SYNTAX :
 %	- [signal,h3_bands,h3_spe,m_h3_spe,rms,rms_h3_spe,FRMS,DRMS,DSCALE,RES,FINAL] = rms_filtering(spe_in)
 %
+% FUNCTIONS :
+%   - This funtion runs 'frms.m' and 'trms.m' functions.
+%
 % INPUT :
 %	- spe_in: input spectra. This must be a matrix [NxM] containing all the spectra from a
 %	single slit, where N is the spatial dimension (usually N=256) and M the spectral
@@ -68,7 +71,7 @@ for i = 1:1:sp_dim
     rms_h3_spe = frms(h3_spe(i,:));               
 
     
-%     % Thresholds
+    % Thresholds
     FRMS(i) = (rms_h3_spe(i)/rms(i));
     DRMS(i) = rms(i)-rms_h3_spe(i);
     DSCALE(i) = DRMS(i)*FRMS(i);
