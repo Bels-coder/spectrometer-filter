@@ -15,6 +15,9 @@ function [signal,h3_bands,h3_spe,m_h3_spe,rms,rms_h3_spe,FRMS,DRMS,DSCALE,RES,FI
 % reduces the probability of erroneus results. For this purpose use the
 % 'spikeFilter.m' function.
 % 
+% Negative values can also be remove by applying 'rm_negative.m'. 
+% In that case uncomment lines 75 and 76.
+%
 % SYNTAX :
 %	- [signal,h3_bands,h3_spe,m_h3_spe,rms,rms_h3_spe,FRMS,DRMS,DSCALE,RES,FINAL] = rms_filtering(spe_in)
 %
@@ -65,8 +68,14 @@ for i = 1:1:sp_dim
     signal(i,:)= spe_in(i,:);                     
     h3_bands(i,:) = signal(i,idx);                
     h3_spe(i,idx) = h3_bands(i,:);
-    m_h3_spe(i) = mean(h3_spe(i,:));
-
+    m_h3_spe(i) = mean(h3_spe(i,:),'omitnan');
+    
+    % If the spectrum has NaN values, uncomment the following two lines
+    %{
+    signal(isnan(signal(i,:)))=[];
+    h3_spe(isnan(h3_spe(i,:)))=[];
+    %}
+    
     rms = sqrt(sum((abs(signal(i,:))/length(signal(i,:))).^2));                                           
     rms_h3_spe = sqrt(sum((abs(h3_spe(i,:))/length(h3_spe(i,:))).^2));               
 
