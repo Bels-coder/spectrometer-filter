@@ -4,6 +4,9 @@ function [signal,h3_bands,h3_spe,m_h3_spe,rms,rms_h3_spe,FRMS,DRMS,DSCALE,RES,FI
 % value of the RMS computed both for the original spectrum and the same
 % spectrum set to zero everywhere except in correspondence of the H3+ bands. 
 %
+% This function uses Parseval's theorem to calculate the RMS of a signal 
+% by examining the frequency domain of the signal.
+%
 % The spectra should be corrected for the odd-even effect before run this
 % funtion, to enance the fainter signals. For this purpose use the
 % 'odd_even.m' function.
@@ -14,9 +17,6 @@ function [signal,h3_bands,h3_spe,m_h3_spe,rms,rms_h3_spe,FRMS,DRMS,DSCALE,RES,FI
 % 
 % SYNTAX :
 %	- [signal,h3_bands,h3_spe,m_h3_spe,rms,rms_h3_spe,FRMS,DRMS,DSCALE,RES,FINAL] = rms_filtering(spe_in)
-%
-% FUNCTIONS :
-%   - This funtion runs 'frms.m' and 'trms.m' functions.
 %
 % INPUT :
 %	- spe_in: input spectra. This must be a matrix [NxM] containing all the spectra from a
@@ -67,8 +67,8 @@ for i = 1:1:sp_dim
     h3_spe(i,idx) = h3_bands(i,:);
     m_h3_spe(i) = mean(h3_spe(i,:));
 
-    rms = frms(signal(i,:));                                               
-    rms_h3_spe = frms(h3_spe(i,:));               
+    rms = sqrt(sum((abs(signal(i,:))/length(signal(i,:))).^2));                                           
+    rms_h3_spe = sqrt(sum((abs(h3_spe(i,:))/length(h3_spe(i,:))).^2));               
 
     
     % Thresholds
