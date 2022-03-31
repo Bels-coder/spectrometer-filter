@@ -76,7 +76,7 @@ for i = 1:1:sp_dim
     DRMS(i) = rms(i)-rms_h3_spe(i);
     DSCALE(i) = DRMS(i)*FRMS(i);
 
-    if FRMS(i) < 1E-2 || DSCALE(i) > 5.0E-6 || m_h3_spe(i) < 0              
+    if FRMS(i) <= 1E-2 || DSCALE(i) < 5.0E-6 || m_h3_spe(i) < 0              
         RES(i) = 'Reject';                                                                                               
     else                                                                   
         RES(i) = 'Save';
