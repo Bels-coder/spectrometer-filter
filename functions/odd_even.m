@@ -1,6 +1,6 @@
 function spe_out = odd_even(spe_in)
 % ===============================
-% The script applies the odd-even correction to the spectra.
+% The funtion applies the odd-even correction to the spectra.
 %
 % SYNTAX :
 %	- spe_out = odd_even(spe_in)
