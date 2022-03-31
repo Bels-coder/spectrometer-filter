@@ -85,6 +85,6 @@ for i = 1:1:sp_dim
 end
 
 FINAL = table(FRMS, DRMS, DSCALE, RES);
-% FINAL = table(filename, FRMS, DRMS, DSCALE, RES);   % ADD THE INFORMATION ABOUT FILENAME
+
 
 
