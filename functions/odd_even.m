@@ -24,7 +24,7 @@ wl_dim = size(spe_in,2);	                 % spectral dimension
 
 spe_out = nan(size(spe_in));
 
-for i = 1:sp_dim-1
+for i = 1:1:sp_dim
     if isnan(spe_in(i,:))
 	   disp('Skip')	          
 	   continue
@@ -35,8 +35,6 @@ for i = 1:sp_dim-1
     sp = 0.5*(spd+spp);                    % mean of the even and odd spectra
     spe_out(i,:) = sp;
 end   
-
-spe_out(sp_dim,:) = spe_in(sp_dim,:);
 
 
 
