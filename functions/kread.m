@@ -2,6 +2,7 @@ function kread(fil)
 [d,f,e]=fileparts(fil);
 [file, filtyp, source, handle, found] = cspice_kdata(1, 'meta');
 
+%  THIS FUNCTION SHOULD BE USELESS, AS IT WAS USED BY MURA FOR MODIFYING THE METAKERNEL LIST
 
 count = cspice_ktotal( 'ALL' );
 
