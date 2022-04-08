@@ -1,5 +1,8 @@
 function mkread(mk)
 
+% mk is the path (string) of the metakernel file. 
+% Example: mk = '/home/user/doc/mkfolder/recon.96.mk'; mkread(mk);
+
 cspice_furnsh(mk)
 %{
 [d,f,e]=fileparts(mk);
