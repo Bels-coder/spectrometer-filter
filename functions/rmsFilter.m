@@ -61,6 +61,7 @@ FRMS = zeros(size(spe_in,1),1);
 DRMS = zeros(size(spe_in,1),1);
 DSCALE = zeros(size(spe_in,1),1);
 RES = string(zeros(size(spe_in,1),1));
+% Forse puo' avere senso rendere RES in 0 ('Reject') e 1 ('Save') per eleganza/semplicita' di lettura?
 
 
 for i = 1:1:sp_dim
@@ -75,6 +76,9 @@ for i = 1:1:sp_dim
     signal(isnan(signal(i,:)))=[];
     h3_spe(isnan(h3_spe(i,:)))=[];
     %}
+    % Usare un if per evitare di editare manualmente la funzione a seconda del caso?
+    % Inoltre, perche' vuoi svuotare i nan? Se di danno problemi quando usi sum, mean, etc. dovrebbe esserci la possibilita' dare un argomento
+    % per ometterli ('omitnan' o qualcosa del genere).
     
     rms = sqrt(sum((abs(signal(i,:))/length(signal(i,:))).^2));                                           
     rms_h3_spe = sqrt(sum((abs(h3_spe(i,:))/length(h3_spe(i,:))).^2));               
