@@ -1,4 +1,4 @@
-function spe_out = odd_even(spe_in,path)
+function [spe_out,wvl] = odd_even(spe_in,path)
 % ===============================
 % The funtion applies the odd-even correction to the spectra.
 %
