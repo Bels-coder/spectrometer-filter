@@ -16,7 +16,6 @@ function [signal,h3_bands,h3_spe,m_h3_spe,rms,rms_h3_spe,FRMS,DRMS,DSCALE,RES,FI
 % 'spikeFilter.m' function.
 % 
 % Negative values can also be remove by applying 'rm_negative.m'. 
-% In that case uncomment lines 75 and 76.
 %
 % SYNTAX :
 %	- [signal,h3_bands,h3_spe,m_h3_spe,rms,rms_h3_spe,FRMS,DRMS,DSCALE,RES,FINAL] = rms_filtering(spe_in)
@@ -60,24 +59,18 @@ rms_h3_spe = zeros(size(spe_in,1),1);
 FRMS = zeros(size(spe_in,1),1); 
 DRMS = zeros(size(spe_in,1),1);
 DSCALE = zeros(size(spe_in,1),1);
-RES = string(zeros(size(spe_in,1),1));
+RES = zeros(size(spe_in,1),1);
 
 
-for i = 1:1:sp_dim
+for i = 1:sp_dim
     
     signal(i,:)= spe_in(i,:);                     
     h3_bands(i,:) = signal(i,idx);                
     h3_spe(i,idx) = h3_bands(i,:);
     m_h3_spe(i) = mean(h3_spe(i,:),'omitnan');
     
-    % If the spectrum has NaN values, uncomment the following two lines
-    %{
-    signal(isnan(signal(i,:)))=[];
-    h3_spe(isnan(h3_spe(i,:)))=[];
-    %}
-    
-    rms = sqrt(sum((abs(signal(i,:))/length(signal(i,:))).^2));                                           
-    rms_h3_spe = sqrt(sum((abs(h3_spe(i,:))/length(h3_spe(i,:))).^2));               
+    rms = sqrt(sum((abs(signal(i,:))/length(signal(i,:))).^2,'omitnan'));                                           
+    rms_h3_spe = sqrt(sum((abs(h3_spe(i,:))/length(h3_spe(i,:))).^2,'omitnan'));               
 
     
     % Thresholds
@@ -85,10 +78,12 @@ for i = 1:1:sp_dim
     DRMS(i) = rms(i)-rms_h3_spe(i);
     DSCALE(i) = DRMS(i)*FRMS(i);
 
-    if FRMS(i) <= 1E-2 || DSCALE(i) < 5.0E-6 || m_h3_spe(i) < 0              
-        RES(i) = 'Reject';                                                                                               
-    else                                                                   
-        RES(i) = 'Save';
+    if FRMS(i) <= 1E-2 || DSCALE(i) < 5.0E-6 || m_h3_spe(i) < 0    
+%         disp('Reject');    
+        RES(i) = 0;                                                                                               
+    else     
+%         disp('Save');       
+        RES(i) = 1;
     end
    
 end
