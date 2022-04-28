@@ -14,18 +14,25 @@ function spe_out = odd_even(spe_in)
 %	- spe_out: spectra corrected for the odd-even effect affecting all JIRAM spectra.
 % ===============================
 
-wvl = dlmread('JIRAM_WVL_00.txt');         % JIRAM bands                         
-oe = 1:1:size(wvl); 
-par = oe(mod(oe,2)~=1);                    % even spectral points
-dis = oe(mod(oe,2)~=0);                    % odd spectral points
+if nargin < 2 
+	rootpath = '../data/';
+else
+	rootpath = path;
+end
 
-sp_dim = size(spe_in,1);	                 % spatial dimension
-wl_dim = size(spe_in,2);	                 % spectral dimension
+wvl = dlmread(fullfile(rootpath,'JIRAM_WVL_00.txt'));   % JIRAM bands 
+
+oe = 1:length(wvl); 
+par = oe(mod(oe,2)~=1);                                 % even spectral points
+dis = oe(mod(oe,2)~=0);                                 % odd spectral points
+
+sp_dim = size(spe_in,1);	                        % spatial dimension
+wl_dim = size(spe_in,2);	                        % spectral dimension
 
 spe_out = nan(size(spe_in));
 
-for i = 1:1:sp_dim
-    if isnan(spe_in(i,:))
+for i = 1:sp_dim
+    if all(isnan(spe_in(i,:)))
 	   disp('Skip')	          
 	   continue
     end
