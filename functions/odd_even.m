@@ -1,4 +1,4 @@
-function spe_out = odd_even(spe_in)
+function spe_out = odd_even(spe_in,path)
 % ===============================
 % The funtion applies the odd-even correction to the spectra.
 %
@@ -9,6 +9,7 @@ function spe_out = odd_even(spe_in)
 %	- spe_in: input spectra. This must be a matrix [NxM] containing all the spectra from a
 %	single slit, where N is the spatial dimension (usually N=256) and M the spectral
 %	dimension (M=336).
+%       - path: path of the file 'JIRAM_WVL_00.txt' listing JIRAM
 %
 % OUTPUT:
 %	- spe_out: spectra corrected for the odd-even effect affecting all JIRAM spectra.
