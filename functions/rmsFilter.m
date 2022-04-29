@@ -33,6 +33,8 @@ function [signal,h3_bands,h3_spe,m_h3_spe,rms,rms_h3_spe,sp_dim,wl_dim,FRMS,DRMS
 %   - m_h3_spe = mean signal of 'h3_spe'
 %   - rms = root-mean-square of the original signal.
 %   - rms_h3_spe = root-mean-square of the signal in the H3+ bands.
+%   - sp_dim = spatial dimension.
+%   - wvl_dim = spectral_dimension.
 %   - FRMS = ratio between the rms of the original spectrum and that
 %   computed for the H3+ bands 
 %   - DRMS = difference between the rms of the original spectrum and that
