@@ -22,7 +22,7 @@ addpath([rootfolder,'commanding']);
 run('data_upload.m');
 
 % Step 2: odd-even correction 
-nslit = str2double(input(sprintf('Select the number of the slit from 1 to %s:\n',num2str(numel(M.data))),'s'));
+nslit = str2double(input(sprintf('Enter the index of the file from 1 to %s:\n',num2str(numel(M.data))),'s'));
 jirfolder= fullfile(rootfolder,'data'); 
 [sp_odev,wvl] = odd_even(M.data{nslit},jirfolder);
 
@@ -41,13 +41,14 @@ sp = sp_despk/2e6;
 %[signal,h3_bands,h3_spe,m_h3_spe,rms,rms_h3_spe,sp_dim,wl_dim,FRMS,DRMS,DSCALE,RES] = rmsFilter(sp_despk);
 [signal,h3_bands,h3_spe,m_h3_spe,rms,rms_h3_spe,sp_dim,wl_dim,FRMS,DRMS,DSCALE,RES] = rmsFilter(sp);
 
-ORBIT=repmat(strcat('JM0',(num2str(orbnum,'%03.f'))),[sp_dim,1]);
-CUBE = repmat(M.Name_cube{nM}(1:25),[sp_dim,1]);
-FILE = repmat(M.File_Name_b{nM}(strfind(M.File_Name_b{nM},'JIR-'):133),[sp_dim,1]);
-EPOCH = repmat(M.GeometryEpoch{nM},[sp_dim,1]);
-LINDEX = iL.*ones(sp_dim,1);
-MINDEX = nM.*ones(sp_dim,1);
-NCHAN = wl_dim.*ones(sp_dim,1);
+ORBIT=repmat(strcat('JM0',(num2str(orbnum,'%03.f'))),[sp_dim,1]);                    % orbit
+OBJ = repmat(L.OBJ{iL},[sp_dim,1]);                                                  % objective
+CHANNEL = repmat(M.CHANNEL{nM},[sp_dim,1]);                                          % channel
+CUBE = repmat(M.Name_cube{nM}(1:25),[sp_dim,1]);                                     % cube of origin
+FILE = repmat(M.File_Name_b{nM}(strfind(M.File_Name_b{nM},'JIR-'):133),[sp_dim,1]);  % filename
+EPOCH = repmat(M.GeometryEpoch{nM},[sp_dim,1]);                                      % geometry epoch
+LINDEX = iL.*ones(sp_dim,1);                                                         % index of the L structure
+MINDEX = nM.*ones(sp_dim,1);                                                         % index of the M structure
 
-FINAL = table(ORBIT,CUBE,FILE,EPOCH,LINDEX,MINDEX,NCHAN,FRMS,DRMS,DSCALE,RES);
+FINAL = table(ORBIT,OBJ,CHANNEL,CUBE,FILE,EPOCH,LINDEX,MINDEX,FRMS,DRMS,DSCALE,RES);
 
