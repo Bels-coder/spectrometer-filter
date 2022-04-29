@@ -1,4 +1,4 @@
-function [signal,h3_bands,h3_spe,m_h3_spe,rms,rms_h3_spe,sp_dim,wl_dim,FRMS,DRMS,DSCALE,RES,FINAL] = rmsFilter(spe_in)
+function [signal,h3_bands,h3_spe,m_h3_spe,rms,rms_h3_spe,sp_dim,wl_dim,FRMS,DRMS,DSCALE,RES] = rmsFilter(spe_in)
 % ===============================
 % This function filters the spectra based on the comparison between the
 % value of the RMS computed both for the original spectrum and the same
@@ -41,8 +41,6 @@ function [signal,h3_bands,h3_spe,m_h3_spe,rms,rms_h3_spe,sp_dim,wl_dim,FRMS,DRMS
 %   computed for the H3+ bands.
 %   - DSCALE = product between DRMS and FRMS.
 %   - RES = result of the filtering process : Reject or Save the spectrum.
-%   - FINAL = summary table of the values used to estimate the quality of
-%   the observation.
 % ===============================
 
 idx = [147,154,158,162,171,186];            % index of the H3+ bands 
