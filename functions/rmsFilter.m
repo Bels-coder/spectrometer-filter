@@ -1,4 +1,4 @@
-function [signal,h3_bands,h3_spe,m_h3_spe,rms,rms_h3_spe,FRMS,DRMS,DSCALE,RES,FINAL] = rmsFilter(spe_in)
+function [signal,h3_bands,h3_spe,m_h3_spe,rms,rms_h3_spe,sp_dim,wl_dim,FRMS,DRMS,DSCALE,RES,FINAL] = rmsFilter(spe_in)
 % ===============================
 % This function filters the spectra based on the comparison between the
 % value of the RMS computed both for the original spectrum and the same
@@ -88,7 +88,7 @@ for i = 1:sp_dim
    
 end
 
-FINAL = table(FRMS, DRMS, DSCALE, RES);
+%FINAL = table(FRMS, DRMS, DSCALE, RES);
 
 
 
