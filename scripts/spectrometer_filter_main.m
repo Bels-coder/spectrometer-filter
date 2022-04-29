@@ -35,9 +35,18 @@ thrsld = 5.6;      % threshold for spike detection
 sp_despk = spikeFilter(sp_pstv,ron,thrsld);
 
 % Step 4b: from counts to power
-% sp = sp_despk/2e6;
+sp = sp_despk/2e6;
 
 % Step 5: RMS filter
-[signal,h3_bands,h3_spe,m_h3_spe,rms,rms_h3_spe,FRMS,DRMS,DSCALE,RES,FINAL] = rmsFilter(sp_despk);
+%[signal,h3_bands,h3_spe,m_h3_spe,rms,rms_h3_spe,FRMS,DRMS,DSCALE,RES,FINAL] = rmsFilter(sp_despk);
+[signal,h3_bands,h3_spe,m_h3_spe,rms,rms_h3_spe,sp_dim,wl_dim,FRMS,DRMS,DSCALE,RES] = rmsFilter(sp);
 
+ORBIT=repmat(strcat('JM0',(num2str(orbnum,'%03.f'))),[sp_dim,1]);
+CUBE = repmat(M.Name_cube{nM}(1:25),[sp_dim,1]);
+FILE = repmat(M.File_Name_b{nM}(strfind(M.File_Name_b{nM},'JIR-'):133),[sp_dim,1]);
+LINDEX = iL.*ones(sp_dim,1);
+MINDEX = nM.*ones(sp_dim,1);
+NCHAN = wl_dim.*ones(sp_dim,1);
+
+FINAL = table(ORBIT,CUBE,FILE,LINDEX,MINDEX,NCHAN,FRMS,DRMS,DSCALE,RES);
 
