@@ -44,9 +44,10 @@ sp = sp_despk/2e6;
 ORBIT=repmat(strcat('JM0',(num2str(orbnum,'%03.f'))),[sp_dim,1]);
 CUBE = repmat(M.Name_cube{nM}(1:25),[sp_dim,1]);
 FILE = repmat(M.File_Name_b{nM}(strfind(M.File_Name_b{nM},'JIR-'):133),[sp_dim,1]);
+EPOCH = repmat(M.GeometryEpoch{nM},[sp_dim,1]);
 LINDEX = iL.*ones(sp_dim,1);
 MINDEX = nM.*ones(sp_dim,1);
 NCHAN = wl_dim.*ones(sp_dim,1);
 
-FINAL = table(ORBIT,CUBE,FILE,LINDEX,MINDEX,NCHAN,FRMS,DRMS,DSCALE,RES);
+FINAL = table(ORBIT,CUBE,FILE,EPOCH,LINDEX,MINDEX,NCHAN,FRMS,DRMS,DSCALE,RES);
 
