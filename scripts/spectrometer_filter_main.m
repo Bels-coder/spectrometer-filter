@@ -38,7 +38,7 @@ sp_despk = spikeFilter(sp_pstv,ron,thrsld);
 sp = sp_despk/2e6;
 
 % Step 5: RMS filter
-%[signal,h3_bands,h3_spe,m_h3_spe,rms,rms_h3_spe,FRMS,DRMS,DSCALE,RES,FINAL] = rmsFilter(sp_despk);
+%[signal,h3_bands,h3_spe,m_h3_spe,rms,rms_h3_spe,sp_dim,wl_dim,FRMS,DRMS,DSCALE,RES] = rmsFilter(sp_despk);
 [signal,h3_bands,h3_spe,m_h3_spe,rms,rms_h3_spe,sp_dim,wl_dim,FRMS,DRMS,DSCALE,RES] = rmsFilter(sp);
 
 ORBIT=repmat(strcat('JM0',(num2str(orbnum,'%03.f'))),[sp_dim,1]);
